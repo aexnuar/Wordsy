@@ -8,6 +8,10 @@
 import Foundation
 import Combine
 
+enum LibraryType {
+    case mine, community
+}
+
 @MainActor
 final class LibraryViewModel: ObservableObject {
     @Published private(set) var myFolders: [Folder] = []

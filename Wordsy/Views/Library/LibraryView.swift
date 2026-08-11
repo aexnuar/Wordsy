@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-enum LibraryType {
-    case mine, community
-}
-
 struct LibraryView: View {
     @StateObject private var viewModel: LibraryViewModel
     @State private var selectedType: LibraryType = .mine
@@ -34,6 +30,7 @@ struct LibraryView: View {
             Divider()
             
             LibraryContentView(viewModel: viewModel, selectedType: selectedType)
+                .padding(.top, 10)
         }
         .padding(.vertical, 10)
         .background(Color(.systemGray6).ignoresSafeArea())
@@ -85,53 +82,174 @@ struct LibraryContentView: View {
     var selectedType: LibraryType
     
     var body: some View {
-        if selectedType == .mine {
-            List {
-                Section {
-                    ForEach(viewModel.myFolders) { folder in
-                        HStack {
-                            Image(systemName: "folder")
-                            Text(folder.title)
+        ScrollView {
+            if selectedType == .mine {
+                if !viewModel.myFolders.isEmpty {
+                    VStack(alignment: .leading, spacing: 8) {
+                        ForEach(viewModel.myFolders) { folder in
+                            FolderCardView(folder: folder)
+                                .padding(.horizontal, 20)
                         }
-                        .listRowSeparator(.hidden)
                     }
                 }
                 
-                Section {
-                    ForEach(viewModel.myDecks) { deck in
-                        HStack {
-                            Image(systemName: "menucard")
-                            Text(deck.title)
+                if !viewModel.myDecks.isEmpty {
+                    VStack(alignment: .leading, spacing: 8) {
+                        ForEach(viewModel.myDecks) { deck in
+                            DeckCardView(deck: deck)
+                                .padding(.horizontal, 20)
                         }
-                        .listRowSeparator(.hidden)
                     }
                 }
-            }
-        } else {
-            if viewModel.communityDecks.isEmpty {
-                VStack(spacing: 16) {
-                    Image(systemName: "tray")
-                        .font(.system(size: 60))
-                        .foregroundStyle(.secondary)
-                    Text("Нет публичных материалов")
-                        .font(.title3)
-                        .foregroundStyle(.secondary)
-                    Text("Публичные колоды появятся здесь")
-                        .font(.subheadline)
-                        .foregroundStyle(.tertiary)
+                
+                // Placeholder для пустого
+                if viewModel.myFolders.isEmpty && viewModel.myDecks.isEmpty {
+                    EmptyStateView(
+                        icon: "tray",
+                        title: "Нет материалов",
+                        subtitle: "Создайте первую колоду"
+                    )
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
-                List {
-                    ForEach(viewModel.communityDecks) { deck in
-                        HStack {
-                            Image(systemName: "menucard")
-                            Text(deck.title)
+                // Публичные колоды
+                if viewModel.communityDecks.isEmpty {
+                    EmptyStateView(
+                        icon: "network",
+                        title: "Нет публичных материалов",
+                        subtitle: "Публичные колоды появятся здесь"
+                    )
+                } else {
+                    VStack(spacing: 12) {
+                        ForEach(viewModel.communityDecks) { deck in
+                            DeckCardView(deck: deck)
+                                .padding(.horizontal, 20)
                         }
-                        .listRowSeparator(.hidden)
                     }
                 }
             }
+        }
+    }
+    
+    // MARK: - Card Views
+    struct FolderCardView: View {
+        let folder: Folder
+        
+        var body: some View {
+            HStack(spacing: 12) {
+                Image(systemName: "folder.fill")
+                    .font(.callout)
+                    .foregroundStyle(.white)
+                    .frame(width: 40, height: 40)
+                    .background(
+                        LinearGradient(
+                            colors: [.orange, .yellow],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        )
+                    )
+                    .clipShape(Circle())
+                
+                VStack(alignment: .leading, spacing: 3) {
+                    Text(folder.title)
+                        .font(.body)
+                        .fontWeight(.medium)
+                        .foregroundStyle(.primary)
+                        .lineLimit(1)
+                        .truncationMode(.tail)
+                    
+                    Text("Папка")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+                
+                Spacer()
+            }
+            .frame(height: 76)
+            .padding(.horizontal, 16)
+            .background(Color(.systemBackground))
+            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .shadow(color: .black.opacity(0.05), radius: 8, x: 0, y: 2)
+            .onTapGesture {
+                // Haptic feedback
+                let impact = UIImpactFeedbackGenerator(style: .light)
+                impact.impactOccurred()
+                // TODO: Открыть папку
+            }
+        }
+    }
+    
+    struct DeckCardView: View {
+        let deck: Deck
+        
+        var body: some View {
+            HStack(spacing: 12) {
+                Image(systemName: "menucard")
+                    .font(.callout)
+                    .foregroundStyle(.white)
+                    .frame(width: 40, height: 40)
+                    .background(
+                        LinearGradient(
+                            colors: [.blue, .purple],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        )
+                    )
+                    .clipShape(Circle())
+                
+                VStack(alignment: .leading, spacing: 3) {
+                    Text(deck.title)
+                        .font(.body)
+                        .fontWeight(.medium)
+                        .foregroundStyle(.primary)
+                        .lineLimit(1)
+                        .truncationMode(.tail)
+                    
+                    Text("\(deck.cards.count) карточек")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+                
+                Spacer()
+            }
+            .frame(height: 76)
+            .padding(.horizontal, 16)
+            .background(Color(.systemBackground))
+            .clipShape(RoundedRectangle(cornerRadius: 16))
+            .shadow(color: .black.opacity(0.05), radius: 8, x: 0, y: 2)
+            .onTapGesture {
+                // Haptic feedback
+                let impact = UIImpactFeedbackGenerator(style: .light)
+                impact.impactOccurred()
+                // TODO: Открыть колоду
+            }
+        }
+    }
+    
+    struct EmptyStateView: View {
+        let icon: String
+        let title: String
+        let subtitle: String
+        
+        var body: some View {
+            VStack(spacing: 16) {
+                Image(systemName: icon)
+                    .font(.system(size: 60))
+                    .foregroundStyle(.blue.gradient)
+                    .symbolEffect(.pulse)
+                
+                VStack(spacing: 8) {
+                    Text(title)
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                    
+                    Text(subtitle)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
+                }
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.top, 100)
         }
     }
 }

@@ -47,7 +47,7 @@ final class HardCodeDeckRepository: DeckRepositoryProtocol {
     }
     
     private static func makeDecks() -> [Deck] {
-        let deck1 = makeDeck(title: "Английский: слова о характере", pairs: englishWordPairs, isPublic: true)
+        let deck1 = makeDeck(title: "Английский: слова о характере", pairs: englishWordPairs, isPublic: false)
         let deck2 = makeDeck(title: "Испанский: базовые фразы", pairs: spanishWordPairs, isPublic: false)
         let deck3 = makeDeck(title: "Острое слово вместо привычного", pairs: expressionPairs, isPublic: false)
         return [deck1, deck2, deck3]
