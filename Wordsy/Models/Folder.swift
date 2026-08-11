@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-final class Folder {
+final class Folder { // test git 3
     var id: UUID
     var title: String
     
