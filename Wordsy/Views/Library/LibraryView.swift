@@ -34,7 +34,6 @@ struct LibraryView: View {
         }
         .padding(.vertical, 10)
         .background(Color(.systemGray6).ignoresSafeArea())
-        
     }
 }
 
@@ -135,46 +134,44 @@ struct LibraryContentView: View {
         let folder: Folder
         
         var body: some View {
-            HStack(spacing: 12) {
-                Image(systemName: "folder.fill")
-                    .font(.callout)
-                    .foregroundStyle(.white)
-                    .frame(width: 40, height: 40)
-                    .background(
-                        LinearGradient(
-                            colors: [.orange, .yellow],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
+            NavigationLink(destination: Text("Экран папки")) {
+                HStack(spacing: 12) {
+                    Image(systemName: "folder.fill")
+                        .font(.callout)
+                        .foregroundStyle(.white)
+                        .frame(width: 40, height: 40)
+                        .background(
+                            LinearGradient(
+                                colors: [.orange, .yellow],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
                         )
-                    )
-                    .clipShape(Circle())
-                
-                VStack(alignment: .leading, spacing: 3) {
-                    Text(folder.title)
-                        .font(.body)
-                        .fontWeight(.medium)
-                        .foregroundStyle(.primary)
-                        .lineLimit(1)
-                        .truncationMode(.tail)
+                        .clipShape(Circle())
                     
-                    Text("Папка")
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text(folder.title)
+                            .font(.body)
+                            .fontWeight(.medium)
+                            .foregroundStyle(.primary)
+                            .lineLimit(1)
+                            .truncationMode(.tail)
+                        
+                        Text("Папка")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                    }
+                    
+                    Spacer()
                 }
-                
-                Spacer()
+                .frame(height: 76)
+                .padding(.horizontal, 16)
+                .background(Color(.systemBackground))
+                .clipShape(RoundedRectangle(cornerRadius: 12))
+                .shadow(color: .black.opacity(0.05), radius: 8, x: 0, y: 2)
             }
-            .frame(height: 76)
-            .padding(.horizontal, 16)
-            .background(Color(.systemBackground))
-            .clipShape(RoundedRectangle(cornerRadius: 12))
-            .shadow(color: .black.opacity(0.05), radius: 8, x: 0, y: 2)
-            .onTapGesture {
-                // Haptic feedback
-                let impact = UIImpactFeedbackGenerator(style: .light)
-                impact.impactOccurred()
-                // TODO: Открыть папку
-            }
+            .buttonStyle(ScaleButtonStyle())
+            .hapticTap()
         }
     }
     
@@ -182,46 +179,44 @@ struct LibraryContentView: View {
         let deck: Deck
         
         var body: some View {
-            HStack(spacing: 12) {
-                Image(systemName: "menucard")
-                    .font(.callout)
-                    .foregroundStyle(.white)
-                    .frame(width: 40, height: 40)
-                    .background(
-                        LinearGradient(
-                            colors: [.blue, .purple],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
+            NavigationLink(destination: Text("Экран подборки")) {
+                HStack(spacing: 12) {
+                    Image(systemName: "menucard")
+                        .font(.callout)
+                        .foregroundStyle(.white)
+                        .frame(width: 40, height: 40)
+                        .background(
+                            LinearGradient(
+                                colors: [.blue, .purple],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
                         )
-                    )
-                    .clipShape(Circle())
-                
-                VStack(alignment: .leading, spacing: 3) {
-                    Text(deck.title)
-                        .font(.body)
-                        .fontWeight(.medium)
-                        .foregroundStyle(.primary)
-                        .lineLimit(1)
-                        .truncationMode(.tail)
+                        .clipShape(Circle())
                     
-                    Text("\(deck.cards.count) карточек")
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text(deck.title)
+                            .font(.body)
+                            .fontWeight(.medium)
+                            .foregroundStyle(.primary)
+                            .lineLimit(1)
+                            .truncationMode(.tail)
+                        
+                        Text("\(deck.cards.count) карточек")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                    }
+                    
+                    Spacer()
                 }
-                
-                Spacer()
+                .frame(height: 76)
+                .padding(.horizontal, 16)
+                .background(Color(.systemBackground))
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+                .shadow(color: .black.opacity(0.05), radius: 8, x: 0, y: 2)
             }
-            .frame(height: 76)
-            .padding(.horizontal, 16)
-            .background(Color(.systemBackground))
-            .clipShape(RoundedRectangle(cornerRadius: 16))
-            .shadow(color: .black.opacity(0.05), radius: 8, x: 0, y: 2)
-            .onTapGesture {
-                // Haptic feedback
-                let impact = UIImpactFeedbackGenerator(style: .light)
-                impact.impactOccurred()
-                // TODO: Открыть колоду
-            }
+            .buttonStyle(ScaleButtonStyle())
+            .hapticTap()
         }
     }
     

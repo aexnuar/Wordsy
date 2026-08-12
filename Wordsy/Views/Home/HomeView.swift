@@ -15,22 +15,20 @@ struct HomeView: View {
     }
     
     var body: some View {
-        NavigationStack {
-            ZStack {
-                Color(.systemGray6)
-                    .ignoresSafeArea()
-                
-                VStack(spacing: 30) {
-                    MenuCardsView(viewModel: viewModel)
-                    DeckCarouselView(title: "Недавние", decks: viewModel.recentDecks)
-                    DeckCarouselView(title: "Мои подборки", decks: viewModel.myDecks)
-                    Spacer()
-                }
-                .padding(.top)
-                .padding(.horizontal)
+        ZStack {
+            Color(.systemGray6)
+                .ignoresSafeArea()
+            
+            VStack(spacing: 30) {
+                MenuCardsView(viewModel: viewModel)
+                DeckCarouselView(title: "Недавние", decks: viewModel.recentDecks)
+                DeckCarouselView(title: "Мои подборки", decks: viewModel.myDecks)
+                Spacer()
             }
-            .navigationTitle("Wordsy")
+            .padding(.top)
+            .padding(.horizontal)
         }
+        .navigationTitle("Wordsy")
     }
 }
 

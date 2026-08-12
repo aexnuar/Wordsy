@@ -28,6 +28,7 @@
 		0B6400D1302659D600E45F97 /* ScaleButtonStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6400D0302659D600E45F97 /* ScaleButtonStyleView.swift */; };
 		0B6400D330265D4400E45F97 /* DeckCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6400D230265D4400E45F97 /* DeckCarouselView.swift */; };
 		0B643636302B264700FF476D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0B643635302B264700FF476D /* .gitignore */; };
+		0B9C6C88302C83AC006ABA09 /* View+Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C6C87302C83AC006ABA09 /* View+Haptic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		0B6400D0302659D600E45F97 /* ScaleButtonStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleButtonStyleView.swift; sourceTree = "<group>"; };
 		0B6400D230265D4400E45F97 /* DeckCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCarouselView.swift; sourceTree = "<group>"; };
 		0B643635302B264700FF476D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		0B9C6C87302C83AC006ABA09 /* View+Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Haptic.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +154,9 @@
 			isa = PBXGroup;
 			children = (
 				0B6400AA30221E4A00E45F97 /* HomeView.swift */,
-				0B6400C930260D4B00E45F97 /* HomeViewComponents */,
+				0B6400C33025FC4C00E45F97 /* MenuCardsView.swift */,
+				0B6400CE3026140A00E45F97 /* MenuCardView.swift */,
+				0B6400D230265D4400E45F97 /* DeckCarouselView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -168,6 +172,7 @@
 		0B640093301CE34D00E45F97 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				0B6400D0302659D600E45F97 /* ScaleButtonStyleView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 		0B6400A1301DDBEA00E45F97 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0B9C6C87302C83AC006ABA09 /* View+Haptic.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -209,25 +215,6 @@
 				0B6400B33024BC7800E45F97 /* TabBarView.swift */,
 			);
 			path = TabBar;
-			sourceTree = "<group>";
-		};
-		0B6400C930260D4B00E45F97 /* HomeViewComponents */ = {
-			isa = PBXGroup;
-			children = (
-				0B6400C33025FC4C00E45F97 /* MenuCardsView.swift */,
-				0B6400D4302660FA00E45F97 /* MenuCardsViewComponents */,
-				0B6400CE3026140A00E45F97 /* MenuCardView.swift */,
-				0B6400D230265D4400E45F97 /* DeckCarouselView.swift */,
-			);
-			path = HomeViewComponents;
-			sourceTree = "<group>";
-		};
-		0B6400D4302660FA00E45F97 /* MenuCardsViewComponents */ = {
-			isa = PBXGroup;
-			children = (
-				0B6400D0302659D600E45F97 /* ScaleButtonStyleView.swift */,
-			);
-			path = MenuCardsViewComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,6 +309,7 @@
 				0B64009C301CEE3400E45F97 /* DeckRepositoryProtocol.swift in Sources */,
 				0B6400AF3022250500E45F97 /* DIContainer.swift in Sources */,
 				0B64008A301CE2EB00E45F97 /* WordsyApp.swift in Sources */,
+				0B9C6C88302C83AC006ABA09 /* View+Haptic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +442,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 37PNCKQ4BG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -485,6 +474,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 37PNCKQ4BG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

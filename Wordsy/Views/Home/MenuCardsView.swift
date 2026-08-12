@@ -24,7 +24,6 @@ struct MenuCardsView: View {
                             height: 100
                         )
                     }
-                    .buttonStyle(ScaleButtonStyle())
                     
                     NavigationLink(destination: Text("Экран вперемешку")) {
                         MenuCardView(
@@ -37,7 +36,6 @@ struct MenuCardsView: View {
                             height: 100
                         )
                     }
-                    .buttonStyle(ScaleButtonStyle())
                 }
                 
                 HStack(spacing: 10) {
@@ -48,7 +46,6 @@ struct MenuCardsView: View {
                             height: 100
                         )
                     }
-                    .buttonStyle(ScaleButtonStyle())
                     
                     NavigationLink(destination: Text("Экран библиотеки")) {
                         MenuCardView(
@@ -57,9 +54,10 @@ struct MenuCardsView: View {
                             height: 100
                         )
                     }
-                    .buttonStyle(ScaleButtonStyle())
                 }
-            }.buttonStyle(ScaleButtonStyle())
+            }
+            .buttonStyle(ScaleButtonStyle())
+            .hapticTap()
         }
         .frame(height: 210)
     }

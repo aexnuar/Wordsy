@@ -14,15 +14,21 @@ struct TabBarView: View {
     var body: some View {
         TabView {
             Tab("Главная", systemImage: "circle") {
-                HomeView(viewModel: container.makeHomeViewModel())
+                NavigationStack {
+                    HomeView(viewModel: container.makeHomeViewModel())
+                }
             }
             
             Tab("Библиотека", systemImage: "book") {
-                LibraryView(viewModel: container.makeLibraryViewModel())
+                NavigationStack {
+                    LibraryView(viewModel: container.makeLibraryViewModel())
+                }
             }
             
             Tab("Создать", systemImage: "plus") {
-                AddView()
+                NavigationStack {
+                    AddView()
+                }
             }
         }
     }
