@@ -29,6 +29,12 @@
 		0B6400D330265D4400E45F97 /* DeckCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6400D230265D4400E45F97 /* DeckCarouselView.swift */; };
 		0B643636302B264700FF476D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0B643635302B264700FF476D /* .gitignore */; };
 		0B9C6C88302C83AC006ABA09 /* View+Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C6C87302C83AC006ABA09 /* View+Haptic.swift */; };
+		0B9C6CB8302DD489006ABA09 /* LibraryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C6CB7302DD489006ABA09 /* LibraryHeaderView.swift */; };
+		0B9C6CBA302DD4C0006ABA09 /* LibraryTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C6CB9302DD4C0006ABA09 /* LibraryTabView.swift */; };
+		0B9C6CBC302DD4FF006ABA09 /* LibraryContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C6CBB302DD4FF006ABA09 /* LibraryContentView.swift */; };
+		0B9C6CBE302DD53F006ABA09 /* LibraryFolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C6CBD302DD53F006ABA09 /* LibraryFolderView.swift */; };
+		0B9C6CC0302DD5BD006ABA09 /* LibraryDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C6CBF302DD5BD006ABA09 /* LibraryDeckView.swift */; };
+		0B9C6CC2302DD614006ABA09 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C6CC1302DD614006ABA09 /* EmptyStateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +61,12 @@
 		0B6400D230265D4400E45F97 /* DeckCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCarouselView.swift; sourceTree = "<group>"; };
 		0B643635302B264700FF476D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0B9C6C87302C83AC006ABA09 /* View+Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Haptic.swift"; sourceTree = "<group>"; };
+		0B9C6CB7302DD489006ABA09 /* LibraryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryHeaderView.swift; sourceTree = "<group>"; };
+		0B9C6CB9302DD4C0006ABA09 /* LibraryTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryTabView.swift; sourceTree = "<group>"; };
+		0B9C6CBB302DD4FF006ABA09 /* LibraryContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryContentView.swift; sourceTree = "<group>"; };
+		0B9C6CBD302DD53F006ABA09 /* LibraryFolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryFolderView.swift; sourceTree = "<group>"; };
+		0B9C6CBF302DD5BD006ABA09 /* LibraryDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryDeckView.swift; sourceTree = "<group>"; };
+		0B9C6CC1302DD614006ABA09 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +177,12 @@
 			isa = PBXGroup;
 			children = (
 				0B6400B53024D1C700E45F97 /* LibraryView.swift */,
+				0B9C6CB7302DD489006ABA09 /* LibraryHeaderView.swift */,
+				0B9C6CB9302DD4C0006ABA09 /* LibraryTabView.swift */,
+				0B9C6CBB302DD4FF006ABA09 /* LibraryContentView.swift */,
+				0B9C6CBD302DD53F006ABA09 /* LibraryFolderView.swift */,
+				0B9C6CBF302DD5BD006ABA09 /* LibraryDeckView.swift */,
+				0B9C6CC1302DD614006ABA09 /* EmptyStateView.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -304,7 +322,13 @@
 				0B640096301CE3C000E45F97 /* HardCodeDeckRepository.swift in Sources */,
 				0B6400AD30221E9300E45F97 /* HomeViewModel.swift in Sources */,
 				0B6400CF3026140A00E45F97 /* MenuCardView.swift in Sources */,
+				0B9C6CBA302DD4C0006ABA09 /* LibraryTabView.swift in Sources */,
+				0B9C6CC0302DD5BD006ABA09 /* LibraryDeckView.swift in Sources */,
 				0B64009E301CEE4600E45F97 /* DeckRepository.swift in Sources */,
+				0B9C6CBE302DD53F006ABA09 /* LibraryFolderView.swift in Sources */,
+				0B9C6CC2302DD614006ABA09 /* EmptyStateView.swift in Sources */,
+				0B9C6CB8302DD489006ABA09 /* LibraryHeaderView.swift in Sources */,
+				0B9C6CBC302DD4FF006ABA09 /* LibraryContentView.swift in Sources */,
 				0B640098301CE4C900E45F97 /* Card.swift in Sources */,
 				0B64009C301CEE3400E45F97 /* DeckRepositoryProtocol.swift in Sources */,
 				0B6400AF3022250500E45F97 /* DIContainer.swift in Sources */,

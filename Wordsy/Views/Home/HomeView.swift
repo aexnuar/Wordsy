@@ -9,9 +9,11 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject private var viewModel: HomeViewModel
+//    @Binding var selectedTab: AppTab
     
-    init(viewModel: HomeViewModel) {
+    init(viewModel: HomeViewModel/*, selectedTab: Binding<AppTab>*/) {
         _viewModel = StateObject(wrappedValue: viewModel)
+//        _selectedTab = selectedTab
     }
     
     var body: some View {
@@ -20,7 +22,7 @@ struct HomeView: View {
                 .ignoresSafeArea()
             
             VStack(spacing: 30) {
-                MenuCardsView(viewModel: viewModel)
+                MenuCardsView(viewModel: viewModel/*, selectedTab: $selectedTab*/)
                 DeckCarouselView(title: "Недавние", decks: viewModel.recentDecks)
                 DeckCarouselView(title: "Мои подборки", decks: viewModel.myDecks)
                 Spacer()
@@ -33,5 +35,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView(viewModel: HomeViewModel(repository: HardCodeDeckRepository()))
+    HomeView(viewModel: HomeViewModel(repository: HardCodeDeckRepository())/*, selectedTab: .constant(.home)*/)
 }

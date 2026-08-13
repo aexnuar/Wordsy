@@ -8,24 +8,29 @@
 import Foundation
 import SwiftUI
 
+//enum AppTab {
+//    case home, library, add
+//}
+
 struct TabBarView: View {
     @EnvironmentObject private var container: DIContainer
+        //@State private var selectedTab: AppTab = .home
     
     var body: some View {
-        TabView {
-            Tab("Главная", systemImage: "circle") {
+        TabView/*(selection: $selectedTab)*/ {
+            Tab("Главная", systemImage: "circle"/*, value: .home*/) {
                 NavigationStack {
-                    HomeView(viewModel: container.makeHomeViewModel())
+                    HomeView(viewModel: container.makeHomeViewModel()/*, selectedTab: $selectedTab*/)
                 }
             }
             
-            Tab("Библиотека", systemImage: "book") {
+            Tab("Библиотека", systemImage: "book"/*, value: .library*/) {
                 NavigationStack {
                     LibraryView(viewModel: container.makeLibraryViewModel())
                 }
             }
             
-            Tab("Создать", systemImage: "plus") {
+            Tab("Создать", systemImage: "plus"/*, value: .add*/) {
                 NavigationStack {
                     AddView()
                 }
