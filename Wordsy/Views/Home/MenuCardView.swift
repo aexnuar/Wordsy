@@ -7,19 +7,6 @@
 
 import SwiftUI
 
-struct MenuCard {
-    let id = UUID()
-    let emoji: String
-    let title: String
-    let subtitle: String?
-    
-    init(emoji: String, title: String, subtitle: String? = nil) {
-        self.emoji = emoji
-        self.title = title
-        self.subtitle = subtitle
-    }
-}
-
 struct MenuCardView: View {
     let card: MenuCard
     let width: CGFloat

@@ -35,6 +35,7 @@
 		0B9C6CBE302DD53F006ABA09 /* LibraryFolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C6CBD302DD53F006ABA09 /* LibraryFolderView.swift */; };
 		0B9C6CC0302DD5BD006ABA09 /* LibraryDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C6CBF302DD5BD006ABA09 /* LibraryDeckView.swift */; };
 		0B9C6CC2302DD614006ABA09 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C6CC1302DD614006ABA09 /* EmptyStateView.swift */; };
+		0B9C6CC4302DD9F3006ABA09 /* MenuCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C6CC3302DD9F3006ABA09 /* MenuCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		0B9C6CBD302DD53F006ABA09 /* LibraryFolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryFolderView.swift; sourceTree = "<group>"; };
 		0B9C6CBF302DD5BD006ABA09 /* LibraryDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryDeckView.swift; sourceTree = "<group>"; };
 		0B9C6CC1302DD614006ABA09 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		0B9C6CC3302DD9F3006ABA09 /* MenuCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				0B640097301CE4C900E45F97 /* Card.swift */,
 				0B640099301CE65E00E45F97 /* Deck.swift */,
 				0B6400B030236A8000E45F97 /* Folder.swift */,
+				0B9C6CC3302DD9F3006ABA09 /* MenuCard.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B6400D330265D4400E45F97 /* DeckCarouselView.swift in Sources */,
+				0B9C6CC4302DD9F3006ABA09 /* MenuCard.swift in Sources */,
 				0B6400BE3024D22300E45F97 /* LibraryViewModel.swift in Sources */,
 				0B6400B83024D1D400E45F97 /* AddView.swift in Sources */,
 				0B64009A301CE65E00E45F97 /* Deck.swift in Sources */,

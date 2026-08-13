@@ -21,8 +21,8 @@ struct LibraryView: View {
                 .padding(.horizontal, 20)
             
             HStack(spacing: 40) {
-                LibraryTabView(selectedType: $selectedType, title: "Мои материалы", type: .mine)
-                LibraryTabView(selectedType: $selectedType, title: "Публичные", type: .community)
+                LibraryTabView(selectedType: $selectedType, title: "Моё", type: .mine)
+                LibraryTabView(selectedType: $selectedType, title: "Публичное", type: .community)
                 Spacer()
             }
             .padding(.horizontal, 20)

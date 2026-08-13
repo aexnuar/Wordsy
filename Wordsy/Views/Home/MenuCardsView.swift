@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MenuCardsView: View {
     @ObservedObject var viewModel: HomeViewModel
-//    @Binding var selectedTab: AppTab
     
     var body: some View {
         GeometryReader { geometry in
@@ -39,26 +38,12 @@ struct MenuCardsView: View {
                     }
                 }
                 
-                HStack(spacing: 10) {
-                    NavigationLink(destination: Text("Экран повторения")) {
-                        MenuCardView(
-                            card: MenuCard(emoji: "🔄", title: "Повторить"),
-                            width: width,
-                            height: 100
-                        )
-                    }
-                    
-                    Spacer()
-                    
-//                    Button {
-//                        selectedTab = .library
-//                    } label: {
-//                        MenuCardView(
-//                            card: MenuCard(emoji: "📚", title: "Моя библиотека"),
-//                            width: width2,
-//                            height: 100
-//                        )
-//                    }
+                NavigationLink(destination: Text("Экран повторения")) {
+                    MenuCardView(
+                        card: MenuCard(emoji: "🔄", title: "Повторить"),
+                        width: width,
+                        height: 100
+                    )
                 }
             }
             .buttonStyle(ScaleButtonStyle())
@@ -70,7 +55,7 @@ struct MenuCardsView: View {
 
 #Preview {
     NavigationStack {
-        MenuCardsView(viewModel: HomeViewModel(repository: HardCodeDeckRepository())/*, selectedTab: .constant(.home)*/)
+        MenuCardsView(viewModel: HomeViewModel(repository: HardCodeDeckRepository()))
             .padding()
     }
 }

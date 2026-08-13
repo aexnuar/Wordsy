@@ -37,16 +37,16 @@ struct LibraryContentView: View {
                     EmptyStateView(
                         icon: "tray",
                         title: "Нет материалов",
-                        subtitle: "Создайте первую колоду"
+                        subtitle: "Создайте первую подборку"
                     )
                 }
             } else {
-                // Публичные колоды
+                // Публичные подборки
                 if viewModel.communityDecks.isEmpty {
                     EmptyStateView(
                         icon: "network",
                         title: "Нет публичных материалов",
-                        subtitle: "Публичные колоды появятся здесь"
+                        subtitle: "Публичные подборки появятся здесь"
                     )
                 } else {
                     VStack(spacing: 12) {
