@@ -15,7 +15,7 @@ enum AppTab {
 struct TabBarView: View {
     @EnvironmentObject private var container: DIContainer
     @State private var selectedTab: AppTab = .home
-    @State private var previousTab: AppTab = .home
+    @State private var showAddSheet = false
     
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -37,20 +37,15 @@ struct TabBarView: View {
         }
         .onChange(of: selectedTab) { oldValue, newValue in
             if newValue == .add {
-                previousTab = oldValue
+                showAddSheet = true
+                selectedTab = oldValue
             }
         }
-        .sheet(isPresented: Binding(
-            get: { selectedTab == .add },
-            set: { isPresented in
-                if !isPresented {
-                    selectedTab = previousTab
-                }
-            }
-        )) {
-            AddView()
-                .presentationDetents([.medium])
+        .sheet(isPresented: $showAddSheet) {
+            AddView(isPresented: $showAddSheet)
+                .presentationDetents([.fraction(0.33)])
                 .presentationDragIndicator(.visible)
+                .presentationBackground(Color(.systemBackground))
         }
     }
 }

@@ -36,6 +36,8 @@
 		0B9C6CC0302DD5BD006ABA09 /* LibraryDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C6CBF302DD5BD006ABA09 /* LibraryDeckView.swift */; };
 		0B9C6CC2302DD614006ABA09 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C6CC1302DD614006ABA09 /* EmptyStateView.swift */; };
 		0B9C6CC4302DD9F3006ABA09 /* MenuCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C6CC3302DD9F3006ABA09 /* MenuCard.swift */; };
+		0B9C6CF4302E207D006ABA09 /* CreateDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C6CF3302E207D006ABA09 /* CreateDeckView.swift */; };
+		0B9C6CF6302E2263006ABA09 /* CreateFolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C6CF5302E2263006ABA09 /* CreateFolderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +71,8 @@
 		0B9C6CBF302DD5BD006ABA09 /* LibraryDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryDeckView.swift; sourceTree = "<group>"; };
 		0B9C6CC1302DD614006ABA09 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		0B9C6CC3302DD9F3006ABA09 /* MenuCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCard.swift; sourceTree = "<group>"; };
+		0B9C6CF3302E207D006ABA09 /* CreateDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDeckView.swift; sourceTree = "<group>"; };
+		0B9C6CF5302E2263006ABA09 /* CreateFolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFolderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +206,8 @@
 			isa = PBXGroup;
 			children = (
 				0B6400B73024D1D400E45F97 /* AddView.swift */,
+				0B9C6CF3302E207D006ABA09 /* CreateDeckView.swift */,
+				0B9C6CF5302E2263006ABA09 /* CreateFolderView.swift */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -312,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B6400D330265D4400E45F97 /* DeckCarouselView.swift in Sources */,
+				0B9C6CF4302E207D006ABA09 /* CreateDeckView.swift in Sources */,
 				0B9C6CC4302DD9F3006ABA09 /* MenuCard.swift in Sources */,
 				0B6400BE3024D22300E45F97 /* LibraryViewModel.swift in Sources */,
 				0B6400B83024D1D400E45F97 /* AddView.swift in Sources */,
@@ -323,6 +330,7 @@
 				0B6400D1302659D600E45F97 /* ScaleButtonStyleView.swift in Sources */,
 				0B6400AB30221E4A00E45F97 /* HomeView.swift in Sources */,
 				0B6400B63024D1C700E45F97 /* LibraryView.swift in Sources */,
+				0B9C6CF6302E2263006ABA09 /* CreateFolderView.swift in Sources */,
 				0B640096301CE3C000E45F97 /* HardCodeDeckRepository.swift in Sources */,
 				0B6400AD30221E9300E45F97 /* HomeViewModel.swift in Sources */,
 				0B6400CF3026140A00E45F97 /* MenuCardView.swift in Sources */,
