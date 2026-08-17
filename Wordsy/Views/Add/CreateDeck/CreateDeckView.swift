@@ -63,19 +63,16 @@ struct CreateRowDeckView: View {
     @FocusState private var isFocused: Bool
     
     var body: some View {
-        VStack {
+        VStack(spacing: 12) {
             CreateTextFieldView(placeholder: "Термин", text: $card.term, isFocused: $isFocused)
             
-            Spacer()
             Divider()
-            Spacer()
             
             CreateTextFieldView(placeholder: "Определение", text: $card.definition, isFocused: $isFocused)
             
             if showExampleField && isFocused {
-                Spacer()
                 Divider()
-                Spacer()
+                
                 CreateTextFieldView(placeholder: "Пример использования", text: $card.example, isFocused: $isFocused)
             }
             
@@ -95,24 +92,26 @@ struct CreateRowDeckView: View {
                             .stroke(Color(.systemGray4), lineWidth: 1)
                     )
                     
-                    PhotosPicker(selection: $selectedPhoto, matching: .images) {
-                        HStack {
-                            Image(systemName: "photo")
-                            //Text("Изображение")
+                    if !showExampleField {
+                        PhotosPicker(selection: $selectedPhoto, matching: .images) {
+                            HStack {
+                                Image(systemName: "photo")
+                            }
                         }
-                    }
-                    .padding(6)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 12)
-                            .stroke(Color(.systemGray4), lineWidth: 1)
-                    )
-                    .onChange(of: selectedPhoto) { _, newItem in
-                        Task {
-                            if let data = try? await newItem?.loadTransferable(type: Data.self) {
-                                card.image = data
+                        .padding(6)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 12)
+                                .stroke(Color(.systemGray4), lineWidth: 1)
+                        )
+                        .onChange(of: selectedPhoto) { _, newItem in
+                            Task {
+                                if let data = try? await newItem?.loadTransferable(type: Data.self) {
+                                    card.image = data
+                                }
                             }
                         }
                     }
+                    
                     Spacer()
                 }
                 .font(.caption)
@@ -143,13 +142,23 @@ struct CreateRowsDeckView: View {
     
     var body: some View {
         ScrollViewReader { proxy in
-            ScrollView {
-                LazyVStack(spacing: 12) {
-                    ForEach(viewModel.cards, id: \.id) { card in
-                        CreateRowDeckView(card: card)
-                            .id(card.id)
-                            .transition(.opacity.combined(with: .move(edge: .leading)))
-                    }
+            List {
+                ForEach(Array(viewModel.cards.enumerated()), id: \.element.id) { index, card in
+                    CreateRowDeckView(card: card)
+                        .id(card.id)
+                        .listRowInsets(EdgeInsets(top: 8, leading: 0, bottom: 6, trailing: 0))
+                        .listRowSeparator(.hidden)
+                        .listRowBackground(Color.clear)
+                        .transition(.opacity.combined(with: .move(edge: .leading)))
+                        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                            Button(role: .destructive) {
+                                withAnimation {
+                                    viewModel.removeCard(at: index)
+                                }
+                            } label: {
+                                Label("Удалить", systemImage: "trash")
+                            }
+                        }
                 }
                 
                 AddCardButtonView {
@@ -157,14 +166,19 @@ struct CreateRowsDeckView: View {
                         viewModel.addCard()
                     }
                     if let newID = viewModel.cards.last?.id {
-                        DispatchQueue.main.async {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                             withAnimation {
-                                proxy.scrollTo(newID, anchor: .top)
+                                proxy.scrollTo(newID, anchor: .center)
                             }
                         }
                     }
                 }
+                .listRowInsets(EdgeInsets(top: 6, leading: 0, bottom: 6, trailing: 0))
+                .listRowSeparator(.hidden)
+                .listRowBackground(Color.clear)
             }
+            .listStyle(.plain)
+            .scrollContentBackground(.hidden)
             .scrollIndicators(.hidden)
             
             Spacer()
