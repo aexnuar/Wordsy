@@ -13,6 +13,8 @@ final class Card {
     var id: UUID
     var term: String
     var definition: String
+    var example: String = ""
+    var image: Data?
     var repetitions: Int
     var dueDate: Date
     
@@ -26,10 +28,12 @@ final class Card {
         dueDate <= .now
     }
     
-    init(term: String, definition: String) {
+    init(term: String, definition: String, example: String = "", image: Data? = nil) {
         self.id = UUID()
         self.term = term
         self.definition = definition
+        self.example = example
+        self.image = image
         self.repetitions = 0
         self.dueDate = .now
     }

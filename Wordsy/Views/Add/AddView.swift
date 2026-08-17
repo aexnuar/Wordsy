@@ -7,7 +7,10 @@
 
 import SwiftUI
 
+//правило простое — "кто показывает следующий экран, тот и достаёт для него ViewModel из контейнера", независимо от того, есть ли у самого показывающего своя ViewModel или нет.
+
 struct AddView: View {
+    @EnvironmentObject private var container: DIContainer
     @State private var showCreateDeck = false
     @State private var showCreateFolder = false
     @Binding var isPresented: Bool
@@ -28,7 +31,7 @@ struct AddView: View {
         }
         .buttonStyle(ScaleButtonStyle())
         .fullScreenCover(isPresented: $showCreateDeck) {
-            CreateDeckView(isPresented: $isPresented)
+            CreateDeckView(viewModel: container.makeCreateDeckViewModel(), isPresented: $isPresented)
         }
         .fullScreenCover(isPresented: $showCreateFolder) {
             CreateFolderView(isPresented: $isPresented)
