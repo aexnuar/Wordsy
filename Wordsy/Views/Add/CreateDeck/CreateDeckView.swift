@@ -86,10 +86,10 @@ struct CreateRowDeckView: View {
                     } label: {
                         HStack(spacing: 4) {
                             Image(systemName: "text.quote")
-                            Text(showExampleField ? "Скрыть пример" : "Пример")
+                            Text(showExampleField ? "x" : "+")
                         }
+                        .padding(6)
                     }
-                    .padding(6)
                     .overlay(
                         RoundedRectangle(cornerRadius: 12)
                             .stroke(Color(.systemGray4), lineWidth: 1)
@@ -129,7 +129,7 @@ struct CreateTextFieldView: View {
     let placeholder: String
     @Binding var text: String
     var isFocused: FocusState<Bool>.Binding
-
+    
     var body: some View {
         TextField(placeholder, text: $text, axis: .vertical)
             .frame(maxWidth: .infinity, minHeight: 50)
