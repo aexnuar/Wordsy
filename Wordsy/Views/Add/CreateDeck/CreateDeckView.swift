@@ -19,7 +19,7 @@ struct CreateDeckView: View {
     
     var body: some View {
         VStack {
-            CreateHeaderDeckView(isPresented: $isPresented)
+            CreateHeaderDeckView(viewModel: viewModel, isPresented: $isPresented)
             
             TextField("Введите название", text: $viewModel.title)
                 .font(.headline)
@@ -36,10 +36,11 @@ struct CreateDeckView: View {
 }
 
 struct CreateHeaderDeckView: View {
+    @ObservedObject var viewModel: CreateDeckViewModel
     @Binding var isPresented: Bool
     
     var body: some View {
-        HStack(spacing: 12) {
+        HStack(spacing: 16) {
             Button {
                 isPresented = false
             } label: {
@@ -48,10 +49,24 @@ struct CreateHeaderDeckView: View {
                     .foregroundStyle(Color(.darkGray))
             }
             
-            Text("Создать подборку")
+            Text("Новая подборка")
                 .font(.headline)
             
             Spacer()
+            
+            Button {
+                try? viewModel.save()
+                isPresented = false
+            } label: {
+                Text("Создать")
+                    .padding(6)
+                    .font(.subheadline)
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(lineWidth: 1)
+                    }
+                    .foregroundStyle(Color(.purple))
+            }
         }
     }
 }

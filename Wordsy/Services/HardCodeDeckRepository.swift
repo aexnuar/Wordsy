@@ -11,13 +11,9 @@ final class HardCodeDeckRepository: DeckRepositoryProtocol {
     private var folders: [Folder] = []
     private var decks: [Deck] = HardCodeDeckRepository.makeDecks()
     
-    func fetchFolders() throws -> [Folder] {
-        folders
-    }
+    func fetchFolders() throws -> [Folder] { folders }
     
-    func fetchDecks() throws -> [Deck] {
-        decks
-    }
+    func fetchDecks() throws -> [Deck] { decks }
     
     func fetchRecentlyOpened(limit: Int) throws -> [Deck] {
         let sorted = decks.sorted { $0.lastOpenedAt > $1.lastOpenedAt }

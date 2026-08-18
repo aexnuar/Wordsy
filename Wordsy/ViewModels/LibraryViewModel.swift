@@ -26,7 +26,7 @@ final class LibraryViewModel: ObservableObject {
         loadLibrary()
     }
     
-    private func loadLibrary() {
+    func loadLibrary() {
         do {
             myFolders = try repository.fetchFolders()
             myDecks = try repository.fetchDecks().filter { !$0.isPublic && $0.folder == nil }

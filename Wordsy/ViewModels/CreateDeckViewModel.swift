@@ -34,8 +34,12 @@ final class CreateDeckViewModel: ObservableObject {
         cards.remove(at: index)
     }
     
-    func save() {
-
-        //repository.addDeck(//)
+    func save() throws {
+        guard !title.isEmpty else { return }
+        let validCards = cards.filter { !$0.term.isEmpty }
+        let deck = Deck(title: title, cards: validCards, lastOpenedAt: .now, isPublic: false)
+        
+        repository.addDeck(deck)
+        try repository.save()
     }
 }

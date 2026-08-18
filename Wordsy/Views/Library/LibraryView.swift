@@ -34,6 +34,7 @@ struct LibraryView: View {
         }
         .padding(.vertical, 10)
         .background(Color(.systemGray6).ignoresSafeArea())
+        .onAppear { viewModel.loadLibrary() }
     }
 }
 
