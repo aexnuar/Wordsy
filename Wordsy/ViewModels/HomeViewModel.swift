@@ -15,27 +15,41 @@ final class HomeViewModel: ObservableObject {
     @Published private(set) var dueDecks: [Deck] = []
     @Published private(set) var recentDecks: [Deck] = []
     @Published private(set) var myDecks: [Deck] = []
-    @Published var errorMessage: String?
+//    @Published var errorMessage: String?
     
     private let repository: DeckRepositoryProtocol
+    private var cancellables = Set<AnyCancellable>()
     
     init(repository: DeckRepositoryProtocol) {
         self.repository = repository
-        loadHome()
+        
+        repository.decksPublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] decks in
+                guard let self else { return }
+                
+                let ownDecks = decks.filter { !$0.isPublic }
+                self.inProgressDecks = getInProgressDecks(ownDecks)
+                self.dueDecks = getDueDecks(decks)
+                self.mixedCount = getMasteringCardCount(ownDecks)
+                self.recentDecks = Array(ownDecks.sorted { $0.lastOpenedAt > $1.lastOpenedAt}.prefix(5))
+                self.myDecks = ownDecks
+            }
+            .store(in: &cancellables)
     }
     
-    func loadHome() {
-        do {
-            let ownDecks = try repository.fetchDecks().filter { !$0.isPublic}
-            inProgressDecks = getInProgressDecks(ownDecks)
-            dueDecks = getDueDecks(ownDecks)
-            mixedCount = getMasteringCardCount(ownDecks)
-            recentDecks = try repository.fetchRecentlyOpened(limit: 5).filter { !$0.isPublic }
-            myDecks = ownDecks
-        } catch {
-            errorMessage = "Не удалось загрузить данные: \(error.localizedDescription)"
-        }
-    }
+//    func loadHome() {
+//        do {
+//            let ownDecks = try repository.fetchDecks().filter { !$0.isPublic}
+//            inProgressDecks = getInProgressDecks(ownDecks)
+//            dueDecks = getDueDecks(ownDecks)
+//            mixedCount = getMasteringCardCount(ownDecks)
+//            recentDecks = try repository.fetchRecentlyOpened(limit: 5).filter { !$0.isPublic }
+//            myDecks = ownDecks
+//        } catch {
+//            errorMessage = "Не удалось загрузить данные: \(error.localizedDescription)"
+//        }
+//    }
 }
 
 // MARK: - loadHome methods

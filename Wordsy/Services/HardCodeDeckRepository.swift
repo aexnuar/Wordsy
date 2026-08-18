@@ -6,14 +6,22 @@
 //
 
 import Foundation
+import Combine
 
 final class HardCodeDeckRepository: DeckRepositoryProtocol {
-    private var folders: [Folder] = []
-    private var decks: [Deck] = HardCodeDeckRepository.makeDecks()
+    @Published private var decks: [Deck] = HardCodeDeckRepository.makeDecks()
+    @Published private var folders: [Folder] = []
     
-    func fetchFolders() throws -> [Folder] { folders }
+    var decksPublisher: AnyPublisher<[Deck], Never> {
+        $decks.eraseToAnyPublisher()
+    }
+    
+    var foldersPublisher: AnyPublisher<[Folder], Never> {
+        $folders.eraseToAnyPublisher()
+    }
     
     func fetchDecks() throws -> [Deck] { decks }
+    func fetchFolders() throws -> [Folder] { folders }
     
     func fetchRecentlyOpened(limit: Int) throws -> [Deck] {
         let sorted = decks.sorted { $0.lastOpenedAt > $1.lastOpenedAt }

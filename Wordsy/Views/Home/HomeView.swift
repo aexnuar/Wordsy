@@ -27,7 +27,6 @@ struct HomeView: View {
             }
             .padding(.top)
             .padding(.horizontal)
-            .onAppear { viewModel.loadHome() }
         }
         .navigationTitle("Wordsy")
     }
