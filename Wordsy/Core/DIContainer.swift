@@ -27,6 +27,14 @@ final class DIContainer: ObservableObject {
     func makeCreateDeckViewModel() -> CreateDeckViewModel {
         CreateDeckViewModel(repository: repository)
     }
+    
+    func makeCreateFolderViewModel() -> CreateFolderViewModel {
+        CreateFolderViewModel(repository: repository)
+    }
+    
+    func makeDeckViewModel(deck: Deck) -> DeckViewModel {
+        DeckViewModel(deck: deck, repository: repository)
+    }
 }
 
 /*

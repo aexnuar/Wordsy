@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct LibraryDeckView: View {
+    @EnvironmentObject private var container: DIContainer
     let deck: Deck
     
     var body: some View {
-        NavigationLink(destination: Text("Экран подборки")) {
+        NavigationLink {
+            DeckView(viewModel: container.makeDeckViewModel(deck: deck))
+        } label: {
             HStack(spacing: 12) {
                 Image(systemName: "menucard")
                     .font(.callout)
@@ -49,5 +52,6 @@ struct LibraryDeckView: View {
         }
         .buttonStyle(ScaleButtonStyle())
         .hapticTap()
+        
     }
 }

@@ -19,7 +19,9 @@ struct CreateDeckView: View {
     
     var body: some View {
         VStack {
-            CreateHeaderDeckView(viewModel: viewModel, isPresented: $isPresented)
+            CreateScreenHeaderView(isPresented: $isPresented, title: "Новая подборка") {
+                try? viewModel.save()
+            }
             
             TextField("Введите название", text: $viewModel.title)
                 .font(.headline)
@@ -35,41 +37,41 @@ struct CreateDeckView: View {
     CreateDeckView(viewModel: CreateDeckViewModel(repository: HardCodeDeckRepository()), isPresented: .constant(true))
 }
 
-struct CreateHeaderDeckView: View {
-    @ObservedObject var viewModel: CreateDeckViewModel
-    @Binding var isPresented: Bool
-    
-    var body: some View {
-        HStack(spacing: 16) {
-            Button {
-                isPresented = false
-            } label: {
-                Image(systemName: "xmark")
-                    .font(.title3)
-                    .foregroundStyle(Color(.darkGray))
-            }
-            
-            Text("Новая подборка")
-                .font(.headline)
-            
-            Spacer()
-            
-            Button {
-                try? viewModel.save()
-                isPresented = false
-            } label: {
-                Text("Создать")
-                    .padding(6)
-                    .font(.subheadline)
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 12)
-                            .stroke(lineWidth: 1)
-                    }
-                    .foregroundStyle(Color(.purple))
-            }
-        }
-    }
-}
+//struct CreateHeaderDeckView: View {
+//    @ObservedObject var viewModel: CreateDeckViewModel
+//    @Binding var isPresented: Bool
+//
+//    var body: some View {
+//        HStack(spacing: 16) {
+//            Button {
+//                isPresented = false
+//            } label: {
+//                Image(systemName: "xmark")
+//                    .font(.title3)
+//                    .foregroundStyle(Color(.darkGray))
+//            }
+//
+//            Text("Новая подборка")
+//                .font(.headline)
+//
+//            Spacer()
+//
+//            Button {
+//                try? viewModel.save()
+//                isPresented = false
+//            } label: {
+//                Text("Создать")
+//                    .padding(6)
+//                    .font(.subheadline)
+//                    .overlay {
+//                        RoundedRectangle(cornerRadius: 12)
+//                            .stroke(lineWidth: 1)
+//                    }
+//                    .foregroundStyle(Color(.purple))
+//            }
+//        }
+//    }
+//}
 
 struct CreateRowDeckView: View {
     @Bindable var card: Card
@@ -91,45 +93,66 @@ struct CreateRowDeckView: View {
                 CreateTextFieldView(placeholder: "Пример использования", text: $card.example, isFocused: $isFocused)
             }
             
-            if isFocused {
-                HStack(spacing: 12) {
-                    Button {
-                        showExampleField.toggle()
-                    } label: {
-                        HStack(spacing: 4) {
-                            Image(systemName: "text.quote")
-                            Text(showExampleField ? "x" : "+")
+            if isFocused { // TODO: вынести, раздел будет расширяться в будущем
+                ScrollView(.horizontal) {
+                    HStack(spacing: 12) {
+                        
+                        Button {
+                            showExampleField.toggle()
+                        } label: {
+                            HStack(spacing: 4) {
+                                Image(systemName: "text.quote")
+                                Text("Пример")
+                            }
+                            .padding(6)
                         }
-                        .padding(6)
-                    }
-                    .buttonStyle(.plain)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 12)
-                            .stroke(Color(.systemGray4), lineWidth: 1)
-                    )
-                    
-                    PhotosPicker(selection: $selectedPhoto, matching: .images) {
-                        HStack {
-                            Image(systemName: "photo")
+                        .buttonStyle(.plain)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 12)
+                                .stroke(Color(.systemGray4), lineWidth: 1)
+                        )
+                        
+                        
+                        Button {
+                            showExampleField.toggle()
+                        } label: {
+                            HStack(spacing: 4) {
+                                Image(systemName: "text.quote")
+                                Text("Синоним")
+                            }
+                            .padding(6)
                         }
-                    }
-                    .buttonStyle(.plain)
-                    .padding(6)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 12)
-                            .stroke(Color(.systemGray4), lineWidth: 1)
-                    )
-                    .onChange(of: selectedPhoto) { _, newItem in
-                        Task {
-                            if let data = try? await newItem?.loadTransferable(type: Data.self) {
-                                card.image = data
+                        .buttonStyle(.plain)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 12)
+                                .stroke(Color(.systemGray4), lineWidth: 1)
+                        )
+                        
+                        PhotosPicker(selection: $selectedPhoto, matching: .images) {
+                            HStack {
+                                Image(systemName: "photo")
+                                Text("jpg")
                             }
                         }
+                        .buttonStyle(.plain)
+                        .padding(6)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 12)
+                                .stroke(Color(.systemGray4), lineWidth: 1)
+                        )
+                        .onChange(of: selectedPhoto) { _, newItem in
+                            Task {
+                                if let data = try? await newItem?.loadTransferable(type: Data.self) {
+                                    card.image = data
+                                }
+                            }
+                        }
+                        
+                        Spacer()
                     }
-                    Spacer()
+                    .font(.caption)
+                    .foregroundStyle(.black)
                 }
-                .font(.caption)
-                .foregroundStyle(.black)
             }
         }
         .padding()

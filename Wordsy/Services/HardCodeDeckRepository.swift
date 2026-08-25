@@ -31,6 +31,9 @@ final class HardCodeDeckRepository: DeckRepositoryProtocol {
     func addDeck(_ deck: Deck) {
         decks.append(deck)
     }
+    func addFolder(_ folder: Folder) {
+        folders.append(folder)
+    }
     
     func deleteDeck(_ deck: Deck) {
         guard let index = decks.firstIndex(of: deck) else { return }

@@ -34,7 +34,7 @@ struct AddView: View {
             CreateDeckView(viewModel: container.makeCreateDeckViewModel(), isPresented: $isPresented)
         }
         .fullScreenCover(isPresented: $showCreateFolder) {
-            CreateFolderView(isPresented: $isPresented)
+            CreateFolderView(viewModel: container.makeCreateFolderViewModel(), isPresented: $isPresented)
         }
     }
 }

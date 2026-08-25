@@ -29,6 +29,9 @@
 		0B6400D1302659D600E45F97 /* ScaleButtonStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6400D0302659D600E45F97 /* ScaleButtonStyleView.swift */; };
 		0B6400D330265D4400E45F97 /* DeckCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6400D230265D4400E45F97 /* DeckCarouselView.swift */; };
 		0B643636302B264700FF476D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0B643635302B264700FF476D /* .gitignore */; };
+		0B6A92B33035D846009F3B5A /* CreateScreenHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6A92B23035D846009F3B5A /* CreateScreenHeaderView.swift */; };
+		0B6A92B8303C56E3009F3B5A /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6A92B7303C56E3009F3B5A /* DeckView.swift */; };
+		0B6A92BB303C5714009F3B5A /* DeckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6A92BA303C5714009F3B5A /* DeckViewModel.swift */; };
 		0B9C6C88302C83AC006ABA09 /* View+Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C6C87302C83AC006ABA09 /* View+Haptic.swift */; };
 		0B9C6CB8302DD489006ABA09 /* LibraryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C6CB7302DD489006ABA09 /* LibraryHeaderView.swift */; };
 		0B9C6CBA302DD4C0006ABA09 /* LibraryTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C6CB9302DD4C0006ABA09 /* LibraryTabView.swift */; };
@@ -65,6 +68,9 @@
 		0B6400D0302659D600E45F97 /* ScaleButtonStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleButtonStyleView.swift; sourceTree = "<group>"; };
 		0B6400D230265D4400E45F97 /* DeckCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCarouselView.swift; sourceTree = "<group>"; };
 		0B643635302B264700FF476D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		0B6A92B23035D846009F3B5A /* CreateScreenHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScreenHeaderView.swift; sourceTree = "<group>"; };
+		0B6A92B7303C56E3009F3B5A /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
+		0B6A92BA303C5714009F3B5A /* DeckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckViewModel.swift; sourceTree = "<group>"; };
 		0B9C6C87302C83AC006ABA09 /* View+Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Haptic.swift"; sourceTree = "<group>"; };
 		0B9C6CB7302DD489006ABA09 /* LibraryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryHeaderView.swift; sourceTree = "<group>"; };
 		0B9C6CB9302DD4C0006ABA09 /* LibraryTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryTabView.swift; sourceTree = "<group>"; };
@@ -154,6 +160,7 @@
 				0B640091301CE32F00E45F97 /* Home */,
 				0B640092301CE33600E45F97 /* Library */,
 				0B640094301CE35700E45F97 /* Add */,
+				0B6A92B6303C56C9009F3B5A /* Deck */,
 				0B640093301CE34D00E45F97 /* Components */,
 			);
 			path = Views;
@@ -166,6 +173,7 @@
 				0B6400BD3024D22300E45F97 /* LibraryViewModel.swift */,
 				0B4C682C302F356800FD2440 /* CreateDeckViewModel.swift */,
 				0B4C682E302F357A00FD2440 /* CreateFolderViewModel.swift */,
+				0B6A92BA303C5714009F3B5A /* DeckViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -227,6 +235,7 @@
 				0B6400B73024D1D400E45F97 /* AddView.swift */,
 				0B4C682A302F351000FD2440 /* CreateDeck */,
 				0B4C682B302F352800FD2440 /* CreateFolder */,
+				0B6A92B53035F945009F3B5A /* Components */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -261,6 +270,22 @@
 				0B6400B33024BC7800E45F97 /* TabBarView.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		0B6A92B53035F945009F3B5A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0B6A92B23035D846009F3B5A /* CreateScreenHeaderView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0B6A92B6303C56C9009F3B5A /* Deck */ = {
+			isa = PBXGroup;
+			children = (
+				0B6A92B7303C56E3009F3B5A /* DeckView.swift */,
+			);
+			path = Deck;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B6A92B33035D846009F3B5A /* CreateScreenHeaderView.swift in Sources */,
 				0B6400D330265D4400E45F97 /* DeckCarouselView.swift in Sources */,
 				0B9C6CF4302E207D006ABA09 /* CreateDeckView.swift in Sources */,
 				0B9C6CC4302DD9F3006ABA09 /* MenuCard.swift in Sources */,
@@ -362,8 +388,10 @@
 				0B9C6CB8302DD489006ABA09 /* LibraryHeaderView.swift in Sources */,
 				0B9C6CBC302DD4FF006ABA09 /* LibraryContentView.swift in Sources */,
 				0B640098301CE4C900E45F97 /* Card.swift in Sources */,
+				0B6A92B8303C56E3009F3B5A /* DeckView.swift in Sources */,
 				0B64009C301CEE3400E45F97 /* DeckRepositoryProtocol.swift in Sources */,
 				0B6400AF3022250500E45F97 /* DIContainer.swift in Sources */,
+				0B6A92BB303C5714009F3B5A /* DeckViewModel.swift in Sources */,
 				0B64008A301CE2EB00E45F97 /* WordsyApp.swift in Sources */,
 				0B9C6C88302C83AC006ABA09 /* View+Haptic.swift in Sources */,
 			);

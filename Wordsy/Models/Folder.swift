@@ -16,7 +16,7 @@ final class Folder {
     @Relationship(deleteRule: .nullify, inverse: \Deck.folder)
     var decks: [Deck]
     
-    init(title: String, decks: [Deck]) {
+    init(title: String, decks: [Deck] = []) {
         self.id = UUID()
         self.title = title
         self.decks = decks

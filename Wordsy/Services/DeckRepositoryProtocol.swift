@@ -16,6 +16,7 @@ protocol DeckRepositoryProtocol: AnyObject {
     func fetchFolders() throws -> [Folder]
     func fetchRecentlyOpened(limit: Int) throws -> [Deck]
     func addDeck(_ deck: Deck)
+    func addFolder(_ folder: Folder)
     func deleteDeck(_ deck: Deck)
     func addCard(_ card: Card, to deck: Deck)
     func deleteCard(_ card: Card)
