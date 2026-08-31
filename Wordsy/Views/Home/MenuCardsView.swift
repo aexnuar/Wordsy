@@ -8,32 +8,29 @@
 import SwiftUI
 
 struct MenuCardsView: View {
-    @ObservedObject var viewModel: HomeViewModel
+    @ScaledMetric private var cardHeight: CGFloat = 100
+    private let spacing: CGFloat = 10
     
     var body: some View {
         GeometryReader { geometry in
-            let width = geometry.size.width * 0.62
-            let width2 = geometry.size.width * 0.34
+            let bigWidth = geometry.size.width * 0.62
+            let smallWidth = geometry.size.width * 0.34
             
-            VStack(alignment: .center, spacing: 10) {
-                HStack(spacing: 10) {
+            VStack(spacing: spacing) {
+                HStack(spacing: spacing) {
                     NavigationLink(destination: Text("Экран изучения")) {
                         MenuCardView(
                             card: MenuCard(emoji: "🧠", title: "Изучить"),
-                            width: width,
-                            height: 100
+                            width: bigWidth,
+                            height: cardHeight
                         )
                     }
                     
                     NavigationLink(destination: Text("Экран вперемешку")) {
                         MenuCardView(
-                            card: MenuCard(
-                                emoji: "▶️",
-                                title: "Вперемешку"
-                                //subtitle: "\(viewModel.mixedCount) карт"
-                            ),
-                            width: width2,
-                            height: 100
+                            card: MenuCard(emoji: "▶️",title: "Вперемешку"),
+                            width: smallWidth,
+                            height: cardHeight
                         )
                     }
                 }
@@ -41,21 +38,20 @@ struct MenuCardsView: View {
                 NavigationLink(destination: Text("Экран повторения")) {
                     MenuCardView(
                         card: MenuCard(emoji: "🔄", title: "Повторить"),
-                        width: width,
-                        height: 100
+                        width: bigWidth,
+                        height: cardHeight
                     )
                 }
             }
             .buttonStyle(ScaleButtonStyle())
             .hapticTap()
         }
-        .frame(height: 210)
+        .frame(height: cardHeight * 2 + spacing)
     }
 }
 
 #Preview {
     NavigationStack {
-        MenuCardsView(viewModel: HomeViewModel(repository: HardCodeDeckRepository()))
-            .padding()
+        MenuCardsView()
     }
 }

@@ -20,18 +20,20 @@ struct HomeView: View {
                 .ignoresSafeArea()
             
             VStack(spacing: 30) {
-                MenuCardsView(viewModel: viewModel)
+                MenuCardsView()
                 DeckCarouselView(title: "Недавние", decks: viewModel.recentDecks)
                 DeckCarouselView(title: "Мои подборки", decks: viewModel.myDecks)
                 Spacer()
             }
-            .padding(.top)
-            .padding(.horizontal)
+            .padding()
         }
         .navigationTitle("Wordsy")
     }
 }
 
 #Preview {
-    HomeView(viewModel: HomeViewModel(repository: HardCodeDeckRepository()))
+    NavigationStack {
+        HomeView(viewModel: HomeViewModel(repository: HardCodeDeckRepository()))
+    }
+    .environmentObject(DIContainer())
 }

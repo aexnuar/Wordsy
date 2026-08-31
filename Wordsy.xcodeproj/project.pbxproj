@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B0E4B35303F8B0D00FD2298 /* DeckCarouselCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0E4B34303F8B0D00FD2298 /* DeckCarouselCardView.swift */; };
+		0B0E4B3730408E6200FD2298 /* PluralizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0E4B3630408E6200FD2298 /* PluralizationView.swift */; };
 		0B4C682D302F356800FD2440 /* CreateDeckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4C682C302F356800FD2440 /* CreateDeckViewModel.swift */; };
 		0B4C682F302F357A00FD2440 /* CreateFolderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4C682E302F357A00FD2440 /* CreateFolderViewModel.swift */; };
 		0B64008A301CE2EB00E45F97 /* WordsyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B640088301CE2EB00E45F97 /* WordsyApp.swift */; };
@@ -42,9 +44,15 @@
 		0B9C6CC4302DD9F3006ABA09 /* MenuCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C6CC3302DD9F3006ABA09 /* MenuCard.swift */; };
 		0B9C6CF4302E207D006ABA09 /* CreateDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C6CF3302E207D006ABA09 /* CreateDeckView.swift */; };
 		0B9C6CF6302E2263006ABA09 /* CreateFolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C6CF5302E2263006ABA09 /* CreateFolderView.swift */; };
+		0BC59427303DCEF500FC0DB2 /* DeckCardsSwiperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC59426303DCEF500FC0DB2 /* DeckCardsSwiperView.swift */; };
+		0BC59429303F350B00FC0DB2 /* DeckTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC59428303F350B00FC0DB2 /* DeckTitleView.swift */; };
+		0BC5942B303F354B00FC0DB2 /* DeckStudyModesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC5942A303F354B00FC0DB2 /* DeckStudyModesView.swift */; };
+		0BC5942D303F356E00FC0DB2 /* StudyModeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC5942C303F356E00FC0DB2 /* StudyModeCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B0E4B34303F8B0D00FD2298 /* DeckCarouselCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCarouselCardView.swift; sourceTree = "<group>"; };
+		0B0E4B3630408E6200FD2298 /* PluralizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluralizationView.swift; sourceTree = "<group>"; };
 		0B4C682C302F356800FD2440 /* CreateDeckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDeckViewModel.swift; sourceTree = "<group>"; };
 		0B4C682E302F357A00FD2440 /* CreateFolderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFolderViewModel.swift; sourceTree = "<group>"; };
 		0B640075301CE18300E45F97 /* Wordsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +89,10 @@
 		0B9C6CC3302DD9F3006ABA09 /* MenuCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCard.swift; sourceTree = "<group>"; };
 		0B9C6CF3302E207D006ABA09 /* CreateDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDeckView.swift; sourceTree = "<group>"; };
 		0B9C6CF5302E2263006ABA09 /* CreateFolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFolderView.swift; sourceTree = "<group>"; };
+		0BC59426303DCEF500FC0DB2 /* DeckCardsSwiperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCardsSwiperView.swift; sourceTree = "<group>"; };
+		0BC59428303F350B00FC0DB2 /* DeckTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTitleView.swift; sourceTree = "<group>"; };
+		0BC5942A303F354B00FC0DB2 /* DeckStudyModesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckStudyModesView.swift; sourceTree = "<group>"; };
+		0BC5942C303F356E00FC0DB2 /* StudyModeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyModeCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +215,7 @@
 				0B6400C33025FC4C00E45F97 /* MenuCardsView.swift */,
 				0B6400CE3026140A00E45F97 /* MenuCardView.swift */,
 				0B6400D230265D4400E45F97 /* DeckCarouselView.swift */,
+				0B0E4B34303F8B0D00FD2298 /* DeckCarouselCardView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -225,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				0B6400D0302659D600E45F97 /* ScaleButtonStyleView.swift */,
+				0B0E4B3630408E6200FD2298 /* PluralizationView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -284,6 +298,10 @@
 			isa = PBXGroup;
 			children = (
 				0B6A92B7303C56E3009F3B5A /* DeckView.swift */,
+				0BC59426303DCEF500FC0DB2 /* DeckCardsSwiperView.swift */,
+				0BC59428303F350B00FC0DB2 /* DeckTitleView.swift */,
+				0BC5942A303F354B00FC0DB2 /* DeckStudyModesView.swift */,
+				0BC5942C303F356E00FC0DB2 /* StudyModeCardView.swift */,
 			);
 			path = Deck;
 			sourceTree = "<group>";
@@ -371,6 +389,9 @@
 				0B6400B43024BC7800E45F97 /* TabBarView.swift in Sources */,
 				0B6400B130236A8000E45F97 /* Folder.swift in Sources */,
 				0B6400C43025FC4C00E45F97 /* MenuCardsView.swift in Sources */,
+				0BC5942B303F354B00FC0DB2 /* DeckStudyModesView.swift in Sources */,
+				0BC59429303F350B00FC0DB2 /* DeckTitleView.swift in Sources */,
+				0B0E4B3730408E6200FD2298 /* PluralizationView.swift in Sources */,
 				0B6400D1302659D600E45F97 /* ScaleButtonStyleView.swift in Sources */,
 				0B6400AB30221E4A00E45F97 /* HomeView.swift in Sources */,
 				0B6400B63024D1C700E45F97 /* LibraryView.swift in Sources */,
@@ -382,7 +403,9 @@
 				0B6400CF3026140A00E45F97 /* MenuCardView.swift in Sources */,
 				0B9C6CBA302DD4C0006ABA09 /* LibraryTabView.swift in Sources */,
 				0B9C6CC0302DD5BD006ABA09 /* LibraryDeckView.swift in Sources */,
+				0BC5942D303F356E00FC0DB2 /* StudyModeCardView.swift in Sources */,
 				0B64009E301CEE4600E45F97 /* DeckRepository.swift in Sources */,
+				0B0E4B35303F8B0D00FD2298 /* DeckCarouselCardView.swift in Sources */,
 				0B9C6CBE302DD53F006ABA09 /* LibraryFolderView.swift in Sources */,
 				0B9C6CC2302DD614006ABA09 /* EmptyStateView.swift in Sources */,
 				0B9C6CB8302DD489006ABA09 /* LibraryHeaderView.swift in Sources */,
@@ -392,6 +415,7 @@
 				0B64009C301CEE3400E45F97 /* DeckRepositoryProtocol.swift in Sources */,
 				0B6400AF3022250500E45F97 /* DIContainer.swift in Sources */,
 				0B6A92BB303C5714009F3B5A /* DeckViewModel.swift in Sources */,
+				0BC59427303DCEF500FC0DB2 /* DeckCardsSwiperView.swift in Sources */,
 				0B64008A301CE2EB00E45F97 /* WordsyApp.swift in Sources */,
 				0B9C6C88302C83AC006ABA09 /* View+Haptic.swift in Sources */,
 			);

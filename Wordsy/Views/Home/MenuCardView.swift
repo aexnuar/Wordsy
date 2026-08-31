@@ -13,15 +13,14 @@ struct MenuCardView: View {
     let height: CGFloat
     
     var body: some View {
-        VStack(alignment: .center, spacing: 6) {
+        VStack(spacing: 6) {
             Text(card.emoji)
-                .font(.system(size: 24))
+                .font(.title2)
             
             VStack(spacing: 2) {
                 Text(card.title)
-                    .font(.caption)
-                    .fontWeight(.semibold)
-                    .foregroundStyle(.primary)
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.primary) //?
                 
                 if let subtitle = card.subtitle {
                     Text(subtitle)
@@ -31,11 +30,11 @@ struct MenuCardView: View {
             }
         }
         .frame(width: width, height: height)
-        .background(.white)
+        .background(Color(.secondarySystemGroupedBackground))
         .clipShape(.rect(cornerRadius: 20))
         .overlay(
             RoundedRectangle(cornerRadius: 20)
-                .stroke(LinearGradient(
+                .strokeBorder(LinearGradient(
                     colors: [.blue.opacity(0.3), .purple.opacity(0.3)],
                     startPoint: .top,
                     endPoint: .bottom

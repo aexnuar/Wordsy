@@ -22,20 +22,15 @@ struct DeckCarouselView: View {
                         NavigationLink {
                             DeckView(viewModel: container.makeDeckViewModel(deck: deck))
                         } label: {
-                            Text(deck.title)
-                                .font(.caption2)
-                                .multilineTextAlignment(.leading)
-                                .minimumScaleFactor(0.8)
-                                .frame(width: 140, height: 60)
-                                .background(.white)
-                                .clipShape(RoundedRectangle(cornerRadius: 20))
-                                .overlay(RoundedRectangle(cornerRadius: 20).stroke())
+                            DeckCarouselCardView(title: deck.title)
                         }
                         .buttonStyle(.plain)
                     }
                 }
-                .frame(height: 60)
             }
+            //.frame(height: 60)
+            .fixedSize(horizontal: false, vertical: true)
+            //.contentMargins(.horizontal, 16)
         }
     }
 }

@@ -23,71 +23,85 @@ struct DeckView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
-            Text(viewModel.title)
-            DeckCardsSwiperView(cards: viewModel.cards)
-            Spacer()
+        ScrollView {
+            VStack(alignment: .leading, spacing: 22) {
+                DeckCardsSwiperView(cards: viewModel.cards)
+                DeckTitleView(title: viewModel.title, cardsCount: viewModel.cards.count)
+                DeckStudyModesView()
+                DeckCardsListView(title: "Карточки", cards: viewModel.cards)
+            }
+            .padding()
         }
+        .scrollIndicators(.hidden)
     }
 }
 
-
 #Preview {
-    DeckCardsSwiperView(cards: [
-        Card(term: "ambitious", definition: "целеустремлённый"),
-        Card(term: "resilient", definition: "стойкий")
-    ])
+    DeckView(viewModel: DeckViewModel(
+        deck: Deck(
+            title: "Английский: слова о характере",
+            cards: [
+                Card(term: "ambitious", definition: "целеустремлённыйцелеустремлённыйцелеустремлённыйцелеустремлённыйцелеустремлённый"),
+                Card(term: "resilient", definition: "стойкий"),
+                Card(term: "ambitious", definition: "целеустремлённый"),
+                Card(term: "resilient", definition: "стойкий"),
+                Card(term: "ambitious", definition: "целеустремлённый"),
+                Card(term: "resilient", definition: "стойкий"),
+                Card(term: "ambitious", definition: "целеустремлённый"),
+                Card(term: "resilient", definition: "стойкий"),
+                Card(term: "ambitious", definition: "целеустремлённый"),
+                Card(term: "resilient", definition: "стойкий"),
+                Card(term: "ambitious", definition: "целеустремлённый"),
+                Card(term: "resilient", definition: "стойкий"),
+                Card(term: "ambitious", definition: "целеустремлённый"),
+                Card(term: "resilient", definition: "стойкий"),
+                Card(term: "ambitious", definition: "целеустремлённый"),
+                Card(term: "resilient", definition: "стойкий")
+            ],
+            lastOpenedAt: .now,
+            isPublic: false
+        ),
+        repository: HardCodeDeckRepository()
+    ))
 }
 
-struct DeckCardsSwiperView: View {
+struct DeckProgressView: View {
+    var body: some View {
+        EmptyView()
+    }
+}
+
+struct DeckCardsListView: View {
+    let title: String
     let cards: [Card]
     
     var body: some View {
-        TabView {
-            ForEach(cards, id:\.id) { card in
-                FlipCardView(card: card)
-                    .padding(.horizontal, 24)
-                    .padding(.vertical, 12)
+        VStack(alignment: .leading, spacing: 12) {
+            Text(title)
+                .font(.callout)
+            
+            LazyVStack {
+                ForEach(cards) { card in
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text(card.term)
+                            .font(.callout.weight(.medium))
+                        Text(card.definition)
+                            .font(.subheadline)
+                                    .foregroundStyle(.secondary)
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(Color(.systemGray6))
+                    .clipShape(.rect(cornerRadius: 20))
+                }
             }
         }
-        .tabViewStyle(.page)
-        .indexViewStyle(.page(backgroundDisplayMode: .always))
-        .frame(height: 320)
     }
 }
 
-struct FlipCardView: View {
-    let card: Card
-    @State private var isFlipped = false
-    
-    var body: some View {
-        Button {
-            withAnimation(.easeInOut(duration: 0.4)) {
-                isFlipped.toggle()
-            }
-        } label: {
-            ZStack {
-                cardFace(text: card.term)
-                    .opacity(isFlipped ? 0 : 1)
-                
-                cardFace(text: card.definition)
-                    .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
-                    .opacity(isFlipped ? 1 : 0)
-            }
-            .rotation3DEffect(.degrees(isFlipped ? 180 : 0), axis: (x: 0, y: 1, z: 0))
-        }
-        .buttonStyle(.plain)
-        .hapticTap()
-    }
-    
-    private func cardFace(text: String) -> some View {
-        RoundedRectangle(cornerRadius: 20)
-            .fill(Color(.systemGray6))
-            .overlay {
-                Text(text)
-                    .font(.title2)
-                    .multilineTextAlignment(.center)
-                    .padding()
-            }
-    }
-}
+
+
+
+
+
+
