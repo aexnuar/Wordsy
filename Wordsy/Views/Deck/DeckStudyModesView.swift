@@ -16,7 +16,7 @@ struct DeckStudyModesView: View {
             StudyModeCardView(
                 image: "rectangle.on.rectangle",
                 title: "Карточки",
-                description: "Изучай и отмечай выучены или нет",
+                description: "Отмечай, что знаешь",
                 iconColor: .pink,
                 action: {}
             )
@@ -24,7 +24,7 @@ struct DeckStudyModesView: View {
             StudyModeCardView(
                 image: "brain",
                 title: "Заучивание",
-                description: "Изучай по алгоритму запоминания",
+                description: "По алгоритму повторений",
                 iconColor: .purple,
                 action: {}
             )

@@ -20,8 +20,10 @@ final class Card {
     
     var deck: Deck?
     
-    var isLearning: Bool {
-        repetitions == 0
+    var status: CardStatus {
+        if repetitions == 0 { return .new }
+        if repetitions < 3 { return .learning }
+        return .learned
     }
     
     var isDue: Bool {

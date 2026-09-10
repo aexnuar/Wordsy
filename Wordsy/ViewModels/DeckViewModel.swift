@@ -7,9 +7,11 @@
 
 import Foundation
 import Combine
+import Observation
 
+@Observable
 @MainActor
-final class DeckViewModel: ObservableObject {
+final class DeckViewModel {
     private let deck: Deck
     private let repository: DeckRepositoryProtocol
     
@@ -23,6 +25,18 @@ final class DeckViewModel: ObservableObject {
     }
     
     var cards: [Card] {
-           deck.cards
+        deck.cards
+    }
+    
+    var newCount: Int {
+        cards.filter { $0.status == .new }.count
+    }
+    
+    var learningCount: Int {
+        cards.filter { $0.status == .learning }.count
+    }
+    
+    var learnedCount: Int {
+        cards.filter { $0.status == .learned }.count
     }
 }

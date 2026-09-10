@@ -21,6 +21,7 @@ final class HardCodeDeckRepository: DeckRepositoryProtocol {
     }
     
     func fetchDecks() throws -> [Deck] { decks }
+    
     func fetchFolders() throws -> [Folder] { folders }
     
     func fetchRecentlyOpened(limit: Int) throws -> [Deck] {
@@ -30,9 +31,6 @@ final class HardCodeDeckRepository: DeckRepositoryProtocol {
     
     func addDeck(_ deck: Deck) {
         decks.append(deck)
-    }
-    func addFolder(_ folder: Folder) {
-        folders.append(folder)
     }
     
     func deleteDeck(_ deck: Deck) {
@@ -49,6 +47,14 @@ final class HardCodeDeckRepository: DeckRepositoryProtocol {
         card.deck?.cards.removeAll { $0.id == card.id }
     }
     
+    func addFolder(_ folder: Folder) {
+        folders.append(folder)
+    }
+    
+    func deleteFolder(_ folder: Folder) {
+        folders.removeAll { $0.id == folder.id }
+    }
+    
     func save() throws {
         //
     }
@@ -63,7 +69,6 @@ final class HardCodeDeckRepository: DeckRepositoryProtocol {
     private static func makeDeck(title: String, pairs: [(term: String, definition: String)], isPublic: Bool) -> Deck {
         let cards = pairs.map { Card(term: $0.term, definition: $0.definition) }
         let deck = Deck(title: title, cards: cards, lastOpenedAt: .now, isPublic: isPublic)
-        //for card in cards { card.deck = deck }
         return deck
     }
 }

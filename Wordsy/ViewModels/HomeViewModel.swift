@@ -29,7 +29,7 @@ final class HomeViewModel: ObservableObject {
                 
                 let ownDecks = decks.filter { !$0.isPublic }
                 self.inProgressDecks = getInProgressDecks(ownDecks)
-                self.dueDecks = getDueDecks(decks)
+                self.dueDecks = getDueDecks(ownDecks)
                 self.mixedCount = getMasteringCardCount(ownDecks)
                 self.recentDecks = Array(ownDecks.sorted { $0.lastOpenedAt > $1.lastOpenedAt}.prefix(5))
                 self.myDecks = ownDecks
@@ -39,17 +39,17 @@ final class HomeViewModel: ObservableObject {
     
     private func getInProgressDecks(_ decks: [Deck]) -> [Deck] { // TODO: методы пока не используются на главном экране, подумать как применить, либо удалить в будущем
         decks.filter { deck in
-            deck.cards.contains { $0.isLearning }
+            deck.cards.contains { $0.status == .learning }
         }
     }
     
     private func getMasteringCardCount(_ decks: [Deck]) -> Int {
-        decks.flatMap(\.cards).filter { $0.isLearning }.count
+        decks.flatMap(\.cards).filter { $0.status == .learning }.count
     }
     
     private func getDueDecks(_ decks: [Deck]) -> [Deck] {
         decks.filter { deck in
-            deck.cards.contains { !$0.isLearning && $0.isDue }
+            deck.cards.contains { $0.status != .new && $0.isDue }
         }
     }
 }

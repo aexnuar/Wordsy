@@ -34,6 +34,9 @@
 		0B6A92B33035D846009F3B5A /* CreateScreenHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6A92B23035D846009F3B5A /* CreateScreenHeaderView.swift */; };
 		0B6A92B8303C56E3009F3B5A /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6A92B7303C56E3009F3B5A /* DeckView.swift */; };
 		0B6A92BB303C5714009F3B5A /* DeckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6A92BA303C5714009F3B5A /* DeckViewModel.swift */; };
+		0B8535703046D7F300C9D718 /* CardStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B85356F3046D7F300C9D718 /* CardStatus.swift */; };
+		0B853572304AE59A00C9D718 /* DeckProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B853571304AE59A00C9D718 /* DeckProgressView.swift */; };
+		0B853578304AE61F00C9D718 /* DeckCardsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B853577304AE61F00C9D718 /* DeckCardsListView.swift */; };
 		0B9C6C88302C83AC006ABA09 /* View+Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C6C87302C83AC006ABA09 /* View+Haptic.swift */; };
 		0B9C6CB8302DD489006ABA09 /* LibraryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C6CB7302DD489006ABA09 /* LibraryHeaderView.swift */; };
 		0B9C6CBA302DD4C0006ABA09 /* LibraryTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C6CB9302DD4C0006ABA09 /* LibraryTabView.swift */; };
@@ -79,6 +82,9 @@
 		0B6A92B23035D846009F3B5A /* CreateScreenHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScreenHeaderView.swift; sourceTree = "<group>"; };
 		0B6A92B7303C56E3009F3B5A /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
 		0B6A92BA303C5714009F3B5A /* DeckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckViewModel.swift; sourceTree = "<group>"; };
+		0B85356F3046D7F300C9D718 /* CardStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStatus.swift; sourceTree = "<group>"; };
+		0B853571304AE59A00C9D718 /* DeckProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckProgressView.swift; sourceTree = "<group>"; };
+		0B853577304AE61F00C9D718 /* DeckCardsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCardsListView.swift; sourceTree = "<group>"; };
 		0B9C6C87302C83AC006ABA09 /* View+Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Haptic.swift"; sourceTree = "<group>"; };
 		0B9C6CB7302DD489006ABA09 /* LibraryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryHeaderView.swift; sourceTree = "<group>"; };
 		0B9C6CB9302DD4C0006ABA09 /* LibraryTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryTabView.swift; sourceTree = "<group>"; };
@@ -158,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				0B640097301CE4C900E45F97 /* Card.swift */,
+				0B85356F3046D7F300C9D718 /* CardStatus.swift */,
 				0B640099301CE65E00E45F97 /* Deck.swift */,
 				0B6400B030236A8000E45F97 /* Folder.swift */,
 				0B9C6CC3302DD9F3006ABA09 /* MenuCard.swift */,
@@ -302,6 +309,8 @@
 				0BC59428303F350B00FC0DB2 /* DeckTitleView.swift */,
 				0BC5942A303F354B00FC0DB2 /* DeckStudyModesView.swift */,
 				0BC5942C303F356E00FC0DB2 /* StudyModeCardView.swift */,
+				0B853571304AE59A00C9D718 /* DeckProgressView.swift */,
+				0B853577304AE61F00C9D718 /* DeckCardsListView.swift */,
 			);
 			path = Deck;
 			sourceTree = "<group>";
@@ -406,12 +415,15 @@
 				0BC5942D303F356E00FC0DB2 /* StudyModeCardView.swift in Sources */,
 				0B64009E301CEE4600E45F97 /* DeckRepository.swift in Sources */,
 				0B0E4B35303F8B0D00FD2298 /* DeckCarouselCardView.swift in Sources */,
+				0B853572304AE59A00C9D718 /* DeckProgressView.swift in Sources */,
 				0B9C6CBE302DD53F006ABA09 /* LibraryFolderView.swift in Sources */,
+				0B853578304AE61F00C9D718 /* DeckCardsListView.swift in Sources */,
 				0B9C6CC2302DD614006ABA09 /* EmptyStateView.swift in Sources */,
 				0B9C6CB8302DD489006ABA09 /* LibraryHeaderView.swift in Sources */,
 				0B9C6CBC302DD4FF006ABA09 /* LibraryContentView.swift in Sources */,
 				0B640098301CE4C900E45F97 /* Card.swift in Sources */,
 				0B6A92B8303C56E3009F3B5A /* DeckView.swift in Sources */,
+				0B8535703046D7F300C9D718 /* CardStatus.swift in Sources */,
 				0B64009C301CEE3400E45F97 /* DeckRepositoryProtocol.swift in Sources */,
 				0B6400AF3022250500E45F97 /* DIContainer.swift in Sources */,
 				0B6A92BB303C5714009F3B5A /* DeckViewModel.swift in Sources */,
