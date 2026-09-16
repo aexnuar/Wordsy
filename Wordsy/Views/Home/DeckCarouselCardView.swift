@@ -16,7 +16,7 @@ struct DeckCarouselCardView: View {
     var body: some View {
         Text(title)
             .font(.caption2)
-            .multilineTextAlignment(.leading)
+            .multilineTextAlignment(.leading) // зачем тут?
             .minimumScaleFactor(0.8)
             .frame(width: width, height: height)
             .background(Color(.secondarySystemGroupedBackground))

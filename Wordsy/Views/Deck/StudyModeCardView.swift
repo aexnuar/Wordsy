@@ -36,10 +36,12 @@ struct StudyModeCardView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(14)
-            .overlay {
-                RoundedRectangle(cornerRadius: 16)
-                    .strokeBorder(Color(.systemGray4), lineWidth: 1)
-            }
+//            .overlay {
+//                RoundedRectangle(cornerRadius: 16)
+//                    .strokeBorder(Color(.systemGray4), lineWidth: 1)
+//            }
+            .background(Color(.systemGray6))
+            .clipShape(.rect(cornerRadius: 20))
         }
         .buttonStyle(ScaleButtonStyle())
     }

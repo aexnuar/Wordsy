@@ -13,7 +13,9 @@ struct LibraryHeaderView: View {
             Text("Библиотека")
                 .font(.title)
                 .bold()
+            
             Spacer()
+            
             Button {
                 //
             } label: {
@@ -23,4 +25,8 @@ struct LibraryHeaderView: View {
             }
         }
     }
+}
+
+#Preview {
+    LibraryHeaderView()
 }
