@@ -74,8 +74,13 @@ struct FlipCardView: View {
         RoundedRectangle(cornerRadius: 20)
             .fill(Color(.systemGray6))
             .overlay {
+                RoundedRectangle(cornerRadius: 20)
+                    .strokeBorder(Color(.label), lineWidth: 1)
+            }
+            .overlay {
                 Text(text)
-                    .font(.title2)
+                    //.font(.title2)
+                    .font(.system(.title2, design: .serif))
                     .multilineTextAlignment(.center)
                     .padding()
             }

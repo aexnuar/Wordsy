@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct StudyCardsView: View {
+    @State private var viewModel: StudyCardsViewModel
+
+    init(viewModel: StudyCardsViewModel) {
+        self._viewModel = State(wrappedValue: viewModel)
+    }
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        if viewModel.isFinished {
+            //
+        } else if let card = viewModel.currentCard {
+            //
+        }
     }
 }
 
 #Preview {
-    StudyCardsView()
+    //
 }

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B0E4B35303F8B0D00FD2298 /* DeckCarouselCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0E4B34303F8B0D00FD2298 /* DeckCarouselCardView.swift */; };
-		0B0E4B3730408E6200FD2298 /* PluralizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0E4B3630408E6200FD2298 /* PluralizationView.swift */; };
+		0B0E4B3730408E6200FD2298 /* Pluralization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0E4B3630408E6200FD2298 /* Pluralization.swift */; };
 		0B4C682D302F356800FD2440 /* CreateDeckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4C682C302F356800FD2440 /* CreateDeckViewModel.swift */; };
 		0B4C682F302F357A00FD2440 /* CreateFolderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4C682E302F357A00FD2440 /* CreateFolderViewModel.swift */; };
 		0B64008A301CE2EB00E45F97 /* WordsyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B640088301CE2EB00E45F97 /* WordsyApp.swift */; };
@@ -28,13 +28,17 @@
 		0B6400BE3024D22300E45F97 /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6400BD3024D22300E45F97 /* LibraryViewModel.swift */; };
 		0B6400C43025FC4C00E45F97 /* MenuCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6400C33025FC4C00E45F97 /* MenuCardsView.swift */; };
 		0B6400CF3026140A00E45F97 /* MenuCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6400CE3026140A00E45F97 /* MenuCardView.swift */; };
-		0B6400D1302659D600E45F97 /* ScaleButtonStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6400D0302659D600E45F97 /* ScaleButtonStyleView.swift */; };
+		0B6400D1302659D600E45F97 /* ScaleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6400D0302659D600E45F97 /* ScaleButtonStyle.swift */; };
 		0B6400D330265D4400E45F97 /* DeckCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6400D230265D4400E45F97 /* DeckCarouselView.swift */; };
 		0B643636302B264700FF476D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0B643635302B264700FF476D /* .gitignore */; };
 		0B6A92B33035D846009F3B5A /* CreateScreenHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6A92B23035D846009F3B5A /* CreateScreenHeaderView.swift */; };
 		0B6A92B8303C56E3009F3B5A /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6A92B7303C56E3009F3B5A /* DeckView.swift */; };
 		0B6A92BB303C5714009F3B5A /* DeckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6A92BA303C5714009F3B5A /* DeckViewModel.swift */; };
 		0B75B11B305AF558009B7AFF /* StudyCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B75B11A305AF558009B7AFF /* StudyCardsView.swift */; };
+		0B75B11D305AFB80009B7AFF /* StudySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B75B11C305AFB80009B7AFF /* StudySummaryView.swift */; };
+		0B75B11F305AFBA1009B7AFF /* StudyStageBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B75B11E305AFBA1009B7AFF /* StudyStageBarView.swift */; };
+		0B75B121305AFBCA009B7AFF /* StudyCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B75B120305AFBCA009B7AFF /* StudyCardView.swift */; };
+		0B75B1233069617F009B7AFF /* CardColours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B75B1223069617F009B7AFF /* CardColours.swift */; };
 		0B8535703046D7F300C9D718 /* CardStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B85356F3046D7F300C9D718 /* CardStatus.swift */; };
 		0B853572304AE59A00C9D718 /* DeckProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B853571304AE59A00C9D718 /* DeckProgressView.swift */; };
 		0B853578304AE61F00C9D718 /* DeckCardsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B853577304AE61F00C9D718 /* DeckCardsListView.swift */; };
@@ -57,7 +61,7 @@
 
 /* Begin PBXFileReference section */
 		0B0E4B34303F8B0D00FD2298 /* DeckCarouselCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCarouselCardView.swift; sourceTree = "<group>"; };
-		0B0E4B3630408E6200FD2298 /* PluralizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluralizationView.swift; sourceTree = "<group>"; };
+		0B0E4B3630408E6200FD2298 /* Pluralization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pluralization.swift; sourceTree = "<group>"; };
 		0B4C682C302F356800FD2440 /* CreateDeckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDeckViewModel.swift; sourceTree = "<group>"; };
 		0B4C682E302F357A00FD2440 /* CreateFolderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFolderViewModel.swift; sourceTree = "<group>"; };
 		0B640075301CE18300E45F97 /* Wordsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,13 +82,17 @@
 		0B6400BD3024D22300E45F97 /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
 		0B6400C33025FC4C00E45F97 /* MenuCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCardsView.swift; sourceTree = "<group>"; };
 		0B6400CE3026140A00E45F97 /* MenuCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCardView.swift; sourceTree = "<group>"; };
-		0B6400D0302659D600E45F97 /* ScaleButtonStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleButtonStyleView.swift; sourceTree = "<group>"; };
+		0B6400D0302659D600E45F97 /* ScaleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleButtonStyle.swift; sourceTree = "<group>"; };
 		0B6400D230265D4400E45F97 /* DeckCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCarouselView.swift; sourceTree = "<group>"; };
 		0B643635302B264700FF476D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0B6A92B23035D846009F3B5A /* CreateScreenHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScreenHeaderView.swift; sourceTree = "<group>"; };
 		0B6A92B7303C56E3009F3B5A /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
 		0B6A92BA303C5714009F3B5A /* DeckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckViewModel.swift; sourceTree = "<group>"; };
 		0B75B11A305AF558009B7AFF /* StudyCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyCardsView.swift; sourceTree = "<group>"; };
+		0B75B11C305AFB80009B7AFF /* StudySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySummaryView.swift; sourceTree = "<group>"; };
+		0B75B11E305AFBA1009B7AFF /* StudyStageBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyStageBarView.swift; sourceTree = "<group>"; };
+		0B75B120305AFBCA009B7AFF /* StudyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyCardView.swift; sourceTree = "<group>"; };
+		0B75B1223069617F009B7AFF /* CardColours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardColours.swift; sourceTree = "<group>"; };
 		0B85356F3046D7F300C9D718 /* CardStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStatus.swift; sourceTree = "<group>"; };
 		0B853571304AE59A00C9D718 /* DeckProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckProgressView.swift; sourceTree = "<group>"; };
 		0B853577304AE61F00C9D718 /* DeckCardsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCardsListView.swift; sourceTree = "<group>"; };
@@ -250,8 +258,9 @@
 		0B640093301CE34D00E45F97 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				0B6400D0302659D600E45F97 /* ScaleButtonStyleView.swift */,
-				0B0E4B3630408E6200FD2298 /* PluralizationView.swift */,
+				0B6400D0302659D600E45F97 /* ScaleButtonStyle.swift */,
+				0B0E4B3630408E6200FD2298 /* Pluralization.swift */,
+				0B75B1223069617F009B7AFF /* CardColours.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -324,7 +333,10 @@
 		0B75B119305AF52B009B7AFF /* StudyCards */ = {
 			isa = PBXGroup;
 			children = (
+				0B75B11E305AFBA1009B7AFF /* StudyStageBarView.swift */,
 				0B75B11A305AF558009B7AFF /* StudyCardsView.swift */,
+				0B75B120305AFBCA009B7AFF /* StudyCardView.swift */,
+				0B75B11C305AFB80009B7AFF /* StudySummaryView.swift */,
 			);
 			path = StudyCards;
 			sourceTree = "<group>";
@@ -359,7 +371,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2660;
-				LastUpgradeCheck = 2660;
+				LastUpgradeCheck = 2700;
 				TargetAttributes = {
 					0B640074301CE18300E45F97 = {
 						CreatedOnToolsVersion = 26.6;
@@ -414,8 +426,8 @@
 				0B6400C43025FC4C00E45F97 /* MenuCardsView.swift in Sources */,
 				0BC5942B303F354B00FC0DB2 /* DeckStudyModesView.swift in Sources */,
 				0BC59429303F350B00FC0DB2 /* DeckTitleView.swift in Sources */,
-				0B0E4B3730408E6200FD2298 /* PluralizationView.swift in Sources */,
-				0B6400D1302659D600E45F97 /* ScaleButtonStyleView.swift in Sources */,
+				0B0E4B3730408E6200FD2298 /* Pluralization.swift in Sources */,
+				0B6400D1302659D600E45F97 /* ScaleButtonStyle.swift in Sources */,
 				0B6400AB30221E4A00E45F97 /* HomeView.swift in Sources */,
 				0B85357A30584ABD00C9D718 /* StudyCardsViewModel.swift in Sources */,
 				0B6400B63024D1C700E45F97 /* LibraryView.swift in Sources */,
@@ -431,6 +443,7 @@
 				0B64009E301CEE4600E45F97 /* DeckRepository.swift in Sources */,
 				0B0E4B35303F8B0D00FD2298 /* DeckCarouselCardView.swift in Sources */,
 				0B75B11B305AF558009B7AFF /* StudyCardsView.swift in Sources */,
+				0B75B11F305AFBA1009B7AFF /* StudyStageBarView.swift in Sources */,
 				0B853572304AE59A00C9D718 /* DeckProgressView.swift in Sources */,
 				0B9C6CBE302DD53F006ABA09 /* LibraryFolderView.swift in Sources */,
 				0B853578304AE61F00C9D718 /* DeckCardsListView.swift in Sources */,
@@ -438,10 +451,13 @@
 				0B9C6CB8302DD489006ABA09 /* LibraryHeaderView.swift in Sources */,
 				0B9C6CBC302DD4FF006ABA09 /* LibraryContentView.swift in Sources */,
 				0B640098301CE4C900E45F97 /* Card.swift in Sources */,
+				0B75B1233069617F009B7AFF /* CardColours.swift in Sources */,
+				0B75B11D305AFB80009B7AFF /* StudySummaryView.swift in Sources */,
 				0B6A92B8303C56E3009F3B5A /* DeckView.swift in Sources */,
 				0B8535703046D7F300C9D718 /* CardStatus.swift in Sources */,
 				0B64009C301CEE3400E45F97 /* DeckRepositoryProtocol.swift in Sources */,
 				0B6400AF3022250500E45F97 /* DIContainer.swift in Sources */,
+				0B75B121305AFBCA009B7AFF /* StudyCardView.swift in Sources */,
 				0B6A92BB303C5714009F3B5A /* DeckViewModel.swift in Sources */,
 				0BC59427303DCEF500FC0DB2 /* DeckCardsSwiperView.swift in Sources */,
 				0B64008A301CE2EB00E45F97 /* WordsyApp.swift in Sources */,
@@ -487,6 +503,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 37PNCKQ4BG;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -510,6 +527,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -550,6 +568,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 37PNCKQ4BG;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -566,6 +585,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -578,7 +598,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 37PNCKQ4BG;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -610,7 +630,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 37PNCKQ4BG;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
