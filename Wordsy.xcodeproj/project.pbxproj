@@ -64,6 +64,7 @@
 		0B0E4B34303F8B0D00FD2298 /* DeckCarouselCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCarouselCardView.swift; sourceTree = "<group>"; };
 		0B0E4B3630408E6200FD2298 /* Pluralization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pluralization.swift; sourceTree = "<group>"; };
 		0B448BF030A65C2700DF1F9C /* IconPlaqueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPlaqueView.swift; sourceTree = "<group>"; };
+		0B448BF230A678F000DF1F9C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0B4C682C302F356800FD2440 /* CreateDeckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDeckViewModel.swift; sourceTree = "<group>"; };
 		0B4C682E302F357A00FD2440 /* CreateFolderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFolderViewModel.swift; sourceTree = "<group>"; };
 		0B640075301CE18300E45F97 /* Wordsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +146,7 @@
 		0B64006C301CE18300E45F97 = {
 			isa = PBXGroup;
 			children = (
+				0B448BF230A678F000DF1F9C /* README.md */,
 				0B640089301CE2EB00E45F97 /* Wordsy */,
 				0B640076301CE18300E45F97 /* Products */,
 			);
