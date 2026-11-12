@@ -84,6 +84,13 @@ final class StudyCardsViewModel {
             print("Не удалось сохранить: \(error)")
         }
     }
+    
+    func restart() { // начать сессию заново
+        currentIndex = 0
+        knownCount = 0
+        unknownCount = 0
+        history.removeAll()
+    }
 }
 
 /*

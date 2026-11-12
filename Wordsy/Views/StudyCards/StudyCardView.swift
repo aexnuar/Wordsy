@@ -11,12 +11,12 @@ struct StudyCardView: View {
     let card: Card
     let onKnown: () -> Void
     let onUnknown: () -> Void
-    
+
     @State private var isFlipped = false
     @State private var offset: CGSize = .zero
-    
+
     private let swipeThreshold: CGFloat = 120
-    
+
     var body: some View {
         content
             .overlay { verdictOverlay }
@@ -29,37 +29,37 @@ struct StudyCardView: View {
                 }
             }
     }
-    
+
     // MARK: - Содержимое карточки
     private var content: some View {
         Text(isFlipped ? card.term : card.definition)
             .font(.system(size: 26, design: .serif))
-            .frame(maxWidth: .infinity, minHeight: 560)
-//            .padding(28)
-//            .multilineTextAlignment(.center)
+            .multilineTextAlignment(.center)
+            .padding(28)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color(.systemGray6))
             .clipShape(.rect(cornerRadius: 24))
             .overlay {
                 RoundedRectangle(cornerRadius: 24)
-                    .strokeBorder(Color(.label), lineWidth: 1)
+                    .strokeBorder(Color(.systemGray4), lineWidth: 1)
             }
     }
-    
+
     // MARK: - Обратная связь при свайпе
     private var verdictOverlay: some View {
         ZStack {
             Color.emerald.opacity(dragProgress > 0 ? dragProgress : 0)
             Color.burgundy.opacity(dragProgress < 0 ? -dragProgress : 0)
-            
+
             Text(dragProgress > 0 ? "Знаю" : "Ещё учу")
                 .font(.title2.weight(.semibold))
-                .foregroundStyle(dragProgress > 0 ? .white : .red)
+                .foregroundStyle(.white)
                 .opacity(abs(dragProgress))
         }
         .clipShape(.rect(cornerRadius: 24))
         .allowsHitTesting(false)
     }
-    
+
     // MARK: - Жест перетаскивания
     private var dragGesture: some Gesture {
         DragGesture(minimumDistance: 10)
@@ -78,17 +78,17 @@ struct StudyCardView: View {
                 }
             }
     }
-    
+
     // MARK: - Вспомогательное
     private var dragProgress: CGFloat {
         max(min(offset.width / swipeThreshold, 1), -1)
     }
-    
+
     private func flyAway(to x: CGFloat, then action: @escaping () -> Void) {
         withAnimation(.easeOut(duration: 0.25)) {
             offset = CGSize(width: x, height: offset.height)
         }
-        
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
             action()
         }
@@ -101,5 +101,6 @@ struct StudyCardView: View {
         onKnown: {},
         onUnknown: {}
     )
+    .frame(height: 480)
     .padding()
 }

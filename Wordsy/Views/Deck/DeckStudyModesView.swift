@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct DeckStudyModesView: View {
-//    let onCardsMode: () -> Void
-//    let onLearnMode: () -> Void
+    let onCardsMode: () -> Void
+    let onLearnMode: () -> Void
     
     var body: some View {
         VStack {
@@ -18,7 +18,7 @@ struct DeckStudyModesView: View {
                 title: "Карточки",
                 description: "Отмечай, что знаешь",
                 iconColor: .pink,
-                action: {}
+                action: onCardsMode
             )
             
             StudyModeCardView(
@@ -26,12 +26,12 @@ struct DeckStudyModesView: View {
                 title: "Заучивание",
                 description: "По алгоритму повторений",
                 iconColor: .purple,
-                action: {}
+                action: onLearnMode
             )
         }
     }
 }
 
 #Preview {
-    DeckStudyModesView()
+    DeckStudyModesView(onCardsMode: {}, onLearnMode: {})
 }

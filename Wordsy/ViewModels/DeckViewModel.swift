@@ -39,4 +39,8 @@ final class DeckViewModel {
     var learnedCount: Int {
         cards.filter { $0.status == .learned }.count
     }
+    
+    func makeStudyCardsViewModel() -> StudyCardsViewModel {
+        StudyCardsViewModel(deck: deck, repository: repository)
+    }
 }

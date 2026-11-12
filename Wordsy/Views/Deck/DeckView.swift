@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DeckView: View {
     @State private var viewModel: DeckViewModel
+    @State private var isStudyingCards = false
     
     init(viewModel: DeckViewModel) {
         self._viewModel = State(wrappedValue: viewModel)
@@ -18,14 +19,28 @@ struct DeckView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 22) {
                 DeckCardsSwiperView(cards: viewModel.cards)
+                
                 DeckTitleView(title: viewModel.title, cardsCount: viewModel.cards.count)
-                DeckStudyModesView()
-                DeckProgressView(new: viewModel.newCount, learning: viewModel.learningCount, learned: viewModel.learnedCount)
+                
+                DeckProgressView(
+                    new: viewModel.newCount,
+                    learning: viewModel.learningCount,
+                    learned: viewModel.learnedCount
+                )
+                
+                DeckStudyModesView(
+                    onCardsMode: { isStudyingCards = true },
+                    onLearnMode: { }
+                )
+                
                 DeckCardsListView(title: "Карточки", cards: viewModel.cards)
             }
             .padding()
         }
         .scrollIndicators(.hidden)
+        .fullScreenCover(isPresented: $isStudyingCards) {
+            StudyCardsView(viewModel: viewModel.makeStudyCardsViewModel())
+        }
     }
 }
 
