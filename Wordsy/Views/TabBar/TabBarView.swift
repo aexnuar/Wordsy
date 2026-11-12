@@ -43,7 +43,7 @@ struct TabBarView: View {
         }
         .sheet(isPresented: $showAddSheet) {
             AddView(isPresented: $showAddSheet)
-                .presentationDetents([.fraction(0.33)])
+                .presentationDetents([.fraction(0.27)])
                 .presentationDragIndicator(.visible)
                 .presentationBackground(Color(.systemBackground))
         }

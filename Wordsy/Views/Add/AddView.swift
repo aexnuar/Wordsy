@@ -16,7 +16,7 @@ struct AddView: View {
     @Binding var isPresented: Bool
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 26) {
+        VStack(alignment: .leading, spacing: 20) {
             Button {
                 showCreateDeck = true
             } label: {
