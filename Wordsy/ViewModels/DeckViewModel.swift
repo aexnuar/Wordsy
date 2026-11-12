@@ -9,6 +9,12 @@ import Foundation
 import Combine
 import Observation
 
+extension Deck {
+    var newCount: Int { cards.filter { $0.status == .new }.count }
+    var learningCount: Int { cards.filter { $0.status == .learning }.count }
+    var learnedCount: Int { cards.filter { $0.status == .learned }.count }
+}
+
 @Observable
 @MainActor
 final class DeckViewModel {
@@ -28,17 +34,11 @@ final class DeckViewModel {
         deck.cards
     }
     
-    var newCount: Int {
-        cards.filter { $0.status == .new }.count
-    }
+    var newCount: Int { deck.newCount }
     
-    var learningCount: Int {
-        cards.filter { $0.status == .learning }.count
-    }
+    var learningCount: Int { deck.learningCount }
     
-    var learnedCount: Int {
-        cards.filter { $0.status == .learned }.count
-    }
+    var learnedCount: Int { deck.learnedCount }
     
     func makeStudyCardsViewModel() -> StudyCardsViewModel {
         StudyCardsViewModel(deck: deck, repository: repository)

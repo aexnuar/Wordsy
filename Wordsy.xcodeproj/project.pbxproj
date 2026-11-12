@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0B0E4B35303F8B0D00FD2298 /* DeckCarouselCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0E4B34303F8B0D00FD2298 /* DeckCarouselCardView.swift */; };
 		0B0E4B3730408E6200FD2298 /* Pluralization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0E4B3630408E6200FD2298 /* Pluralization.swift */; };
+		0B448BF130A65C2700DF1F9C /* IconPlaqueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B448BF030A65C2700DF1F9C /* IconPlaqueView.swift */; };
 		0B4C682D302F356800FD2440 /* CreateDeckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4C682C302F356800FD2440 /* CreateDeckViewModel.swift */; };
 		0B4C682F302F357A00FD2440 /* CreateFolderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4C682E302F357A00FD2440 /* CreateFolderViewModel.swift */; };
 		0B64008A301CE2EB00E45F97 /* WordsyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B640088301CE2EB00E45F97 /* WordsyApp.swift */; };
@@ -62,6 +63,7 @@
 /* Begin PBXFileReference section */
 		0B0E4B34303F8B0D00FD2298 /* DeckCarouselCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCarouselCardView.swift; sourceTree = "<group>"; };
 		0B0E4B3630408E6200FD2298 /* Pluralization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pluralization.swift; sourceTree = "<group>"; };
+		0B448BF030A65C2700DF1F9C /* IconPlaqueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPlaqueView.swift; sourceTree = "<group>"; };
 		0B4C682C302F356800FD2440 /* CreateDeckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDeckViewModel.swift; sourceTree = "<group>"; };
 		0B4C682E302F357A00FD2440 /* CreateFolderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFolderViewModel.swift; sourceTree = "<group>"; };
 		0B640075301CE18300E45F97 /* Wordsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -261,6 +263,7 @@
 				0B6400D0302659D600E45F97 /* ScaleButtonStyle.swift */,
 				0B0E4B3630408E6200FD2298 /* Pluralization.swift */,
 				0B75B1223069617F009B7AFF /* CardColours.swift */,
+				0B448BF030A65C2700DF1F9C /* IconPlaqueView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				0B853572304AE59A00C9D718 /* DeckProgressView.swift in Sources */,
 				0B9C6CBE302DD53F006ABA09 /* LibraryFolderView.swift in Sources */,
 				0B853578304AE61F00C9D718 /* DeckCardsListView.swift in Sources */,
+				0B448BF130A65C2700DF1F9C /* IconPlaqueView.swift in Sources */,
 				0B9C6CC2302DD614006ABA09 /* EmptyStateView.swift in Sources */,
 				0B9C6CB8302DD489006ABA09 /* LibraryHeaderView.swift in Sources */,
 				0B9C6CBC302DD4FF006ABA09 /* LibraryContentView.swift in Sources */,
